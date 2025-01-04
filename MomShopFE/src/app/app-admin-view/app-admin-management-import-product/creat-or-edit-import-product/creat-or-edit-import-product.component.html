@@ -1,0 +1,188 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: 'auto', 'min-width': '300px'}" header="Thông báo" [baseZIndex]="10000"></p-confirmDialog>
+<div class="container1">
+    <div class="user">
+        <div class="mb-2">
+            <button (click)="backToCollectionList()" pButton pRipple type="button" icon="pi pi-angle-left"
+                class="p-button-rounded p-button-text" label="Quay lại"></button>
+        </div>
+        <div class="card p-fluid" style="margin: 0 40px;">
+            <div class="row" style="margin: 20px">
+                <div>
+                    <div class="row">
+                        <h5 class="mb-2">Thêm mới hóa đơn</h5>
+                        <hr class="hr-line">
+                        <div class="col-1" *ngIf="receiveOrder.id">
+                            <div class="field">
+                                <label class="mb-2" htmlFor="code">Mã hóa đơn<span class="required-field"> * </span>
+                                </label>
+                                <input [(ngModel)]="receiveOrder.code" type="text" id="code" name="code" pInputText
+                                    maxlength="256" />
+                            </div>
+                        </div>
+
+                        <div class="col-3"  *ngIf="receiveOrder.id">
+                            <div class="field">
+                                <label class="mb-2" htmlFor="supplier">Tên nhà cung cấp<span class="required-field"> *
+                                    </span>
+                                </label>
+                                <input type="text" id="supplier" name="supplier" pInputText
+                                    [(ngModel)]="receiveOrder.supplier" />
+                            </div>
+                        </div>
+                        <div class="col-4"  *ngIf="!receiveOrder.id">
+                            <div class="field">
+                                <label class="mb-2" htmlFor="supplier">Tên nhà cung cấp<span class="required-field"> *
+                                    </span>
+                                </label>
+                                <input type="text" id="supplier" name="supplier" pInputText
+                                    [(ngModel)]="receiveOrder.supplier" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="field">
+                                <label class="mb-2" htmlFor="receivedDate">Ngày nhận đơn<span class="required-field"> *
+                                    </span>
+                                </label>
+                                <p-calendar name="receivedDate" value="receivedDate"
+                                    [(ngModel)]="receiveOrder.receivedDate" dateFormat="dd/mm/yy"
+                                    [style]="{'width':'100%'}" [showButtonBar]="true"></p-calendar>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="field">
+                                <label class="mb-2" htmlFor="receiver">Người nhận<span class="required-field"> * </span>
+                                </label>
+                                <input type="text" id="receiver" name="receiver" pInputText
+                                    [(ngModel)]="receiveOrder.receiver" />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="field">
+                                <label class="mb-2" htmlFor="status">Trạng thái<span class="required-field"> * </span>
+                                </label>
+                                <p-dropdown appendTo="body" optionValue="code" name="status" optionLabel="name"
+                                    [(ngModel)]="receiveOrder.status" [options]="listStatus" [style]="{'width':'100%'}">
+                                </p-dropdown>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="label-text mb-2">Mô tả</label>
+                            <textarea style="width: 100%; max-width: 100%;" rows="5" pInputTextarea
+                                [(ngModel)]="receiveOrder.description" name="description"></textarea>
+                        </div>
+                        <div class="col-10"></div>
+                        <div class="col-2" *ngIf="receiveOrder.id">
+                            <div class="field">
+                                <label htmlFor="totalMoney">
+                                    Tổng tiền
+                                </label>
+                                <input [(ngModel)]="receiveOrder.totalMoney" type="text" id="totalMoney"
+                                    name="totalMoney" pInputText style="border: none;"readonly/>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <hr class="mt-4">
+                </div>
+
+                <div>
+                    <div class="row">
+                        
+                        <div class="col-11">
+                            <h5 class="ml-2">
+                                Thông tin chi tiết
+                            </h5>
+                        </div>
+                        <div class="col-1">
+                            <button pButton pRipple label="Thêm" icon="pi pi-plus" class="p-button-success mr-2" style="height: 40px;"
+                                (click)="addvalue()">
+                            </button>
+                        </div>
+                    </div>
+                    <ng-container *ngFor="let receivedOrderDetail of receivedOrderDetails; let i = index">
+                        <div class="row">
+                            <div class="col-1">
+                                <div class="field mb-2">
+                                    <label htmlFor="code">
+                                        Mã SP <span class="required-field"> * </span>
+                                    </label>
+                                    <input [(ngModel)]="receivedOrderDetail.code" type="text" id="code" name="code"
+                                        pInputText />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="field mb-2">
+                                    <label htmlFor="name">
+                                        Tên sản phẩm <span class="required-field"> * </span>
+                                    </label>
+                                    <input [(ngModel)]="receivedOrderDetail.name" type="text" id="name" name="name"
+                                        pInputText />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="field">
+                                    <label for="type" htmlFor="type">Loại sản phẩm<span
+                                            class="required-field"> * </span> </label>
+                                    <p-dropdown appendTo="body" optionValue="code" name="type" optionLabel="name"
+                                        [(ngModel)]="receivedOrderDetail.type" [options]="types" inputId="type"
+                                        [style]="{'width':'100%'}">
+                                    </p-dropdown>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="field mb-2">
+                                    <label htmlFor="size">
+                                        Size <span class="required-field"> * </span>
+                                    </label>
+                                    <input [(ngModel)]="receivedOrderDetail.size" type="text" id="size" name="size"
+                                        pInputText />
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="field mb-2">
+                                    <label htmlFor="quantity">
+                                        Số lượng <span class="required-field"> * </span>
+                                    </label>
+                                    <input [(ngModel)]="receivedOrderDetail.quantity" type="number" id="quantity"
+                                        name="quantity" pInputText />
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="field mb-2">
+                                    <label htmlFor="unitPrice">
+                                        Đơn giá
+                                    </label>
+                                    <input [(ngModel)]="receivedOrderDetail.unitPrice" type="text" id="description"
+                                        name="unitPrice" pInputText />
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="field mb-2">
+                                    <label htmlFor="description">
+                                        Mô tả
+                                    </label>
+                                    <input [(ngModel)]="receivedOrderDetail.description" type="text" id="description"
+                                        name="description" pInputText />
+                                </div>
+                            </div>
+                            
+                            <div class="col-1 mt-4">
+                                <div style="height: 40px; width: 40px; margin-top: 8px">
+                                    <span><i class="pi pi-trash" style="color: slateblue; font-size: 2rem" (click)="removeDetail(i)"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+        <div class="mt-2">
+            <button style="float: right; margin-right: 40px; height: 40px;" pButton pRipple label="Lưu"
+                (click)="save()"></button>
+        </div>
+    </div>
+</div>

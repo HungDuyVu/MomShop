@@ -1,0 +1,27 @@
+<app-header></app-header> 
+<form  (ngSubmit)="routerPage()">
+<div *ngIf="passlogin" class="form-login mb-5 mt-5">
+    <h2 class="title-form text-center mb-5">MOM SHOP</h2>
+    <div class="form-input">
+        <input type="email" class="input mb-4" placeholder="Email" required  name = "email" [(ngModel)]="user.email">
+        <input type="password" class="input"  placeholder="Mật khẩu" required name = "password" [(ngModel)]="user.password">
+    </div>
+    <p class="note-footer">
+        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+    </p>
+    <div class="form-footer">
+        <button class="btn-login" type="submit">Đăng nhập</button>
+        <div class="text-footer"> 
+            <p class="text-forgot-password">
+                Quên mật khẩu?
+            </p>
+            <a class="text-register"  (click)="routerRegister()">
+                <span class="text-gray">hoặc</span>
+                Đăng kí
+            </a>
+        </div>
+    </div>
+</div>
+</form>
+<app-footer></app-footer>
+<!-- <router-outlet *ngIf="checkLogin"></router-outlet>      -->

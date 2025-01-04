@@ -1,0 +1,40 @@
+<div appBsModal #createOrEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="createOrEditModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg d-flex justify-content-center">
+        <div class="modal-content">
+            <div class="header d-flex justify-content-between">
+                <h4 class="modal-title">
+                    <span>Tiến trình đơn hàng</span>
+                </h4>
+                <button type="button" class="close" (click)="close()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container-delivery d-flex col-12 justify-space-between">
+                <div class="block-process d-flex flex-column justify-content-between align-items-center">
+                    <div class="block-icon d-flex justify-content-center align-items-center">
+                    </div>
+                    <p class="text-block">Khởi tạo</p>
+                </div>
+                <div class="block-process d-flex flex-column justify-content-between align-items-center">
+                    <div class="block-icon d-flex justify-content-center align-items-center">
+                    </div>
+                    <p class="text-block">Đang giao</p>
+                </div>
+                <div class="block-process d-flex flex-column justify-content-between align-items-center">
+                    <div class="block-icon d-flex justify-content-center align-items-center">
+                    </div>
+                    <p class="text-block">Đã giao</p>
+                </div>
+                <div class="block-process d-flex flex-column justify-content-between align-items-center">
+                    <div class="block-icon d-flex justify-content-center align-items-center">
+                    </div>
+                    <p class="text-block">Đã hoàn thành</p>
+                </div>
+                <div class="vod-progress-visualize">
+                    <div class="vod-progress-color"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

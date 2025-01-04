@@ -1,0 +1,39 @@
+align-items-center{
+    display: flex;
+  align-items: center;
+}
+* {
+    font-family: "Cousine Regular", sans-serif !important;
+}
+
+.dialog{
+    cursor: pointer;
+}
+
+
+::ng-deep {
+.p-radiobutton .p-radiobutton-box.p-highlight {
+    border-color: #000000!important;
+    background: #000000!important;
+}
+
+.p-button-icon.pi.pi-shopping-cart{
+    margin-right: 10px;
+}
+}
+.btn-addToCart{
+    background-color: #f47916;
+    border:none;
+    color:black;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.size_guide,.policy_transfer{
+    color:black;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: bold;
+}
+

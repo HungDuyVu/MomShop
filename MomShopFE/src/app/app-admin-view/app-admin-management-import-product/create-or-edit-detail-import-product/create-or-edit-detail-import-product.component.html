@@ -1,0 +1,45 @@
+<div class="form-group form-group-master form-md-line-input form-md-floating-label no-hint input-bottom-form">
+    <div class="row mb-4">
+        <div class="col-4">
+            <label class="label-text" for="code">Mã sản phẩm</label>
+            <input type="text" class="input-text" pInputText [(ngModel)]="detail.code" />
+        </div>
+        <div class="col-4">
+            <label class="label-text" for="name">Tên sản phẩm</label>
+            <input type="text" class="input-text" pInputText [(ngModel)]="detail.name" />
+        </div>
+        <div class="col-4">
+            <label class="label-text">Loại sản phẩm</label>
+            <p-dropdown [options]="listTypeProduct" [(ngModel)]="detail.type" [style]="{'width':'100%'}"
+                optionLabel="name" optionValue="value"></p-dropdown>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <label class="label-text" for="size">Size</label>
+            <input type="text" class="input-text" pInputText [(ngModel)]="detail.size" />
+        </div>
+        <div class="col-4">
+            <label class="label-text">Số lượng</label>
+            <input type="number" class="input-text" pInputText [(ngModel)]="detail.quantity" />
+        </div>
+        <div class="col-4">
+            <label class="label-text">Giá</label>
+            <input type="number" class="input-text" pInputText [(ngModel)]="detail.unitPrice" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <label class="label-text mb-2">Mô tả</label>
+            <textarea style="width: 100%; max-width: 100%;" rows="5" pInputTextarea
+                [(ngModel)]="detail.description" name="description"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="p-dialog-footer mt-4" style="width: 100%; position: fixed; left: 0; bottom: 0;">
+    <button pButton pRipple label="Hủy" icon="pi pi-times"
+        class="p-button-text p-button-sm p-confirm-dialog-reject mt-4" (click)="close()"></button>
+    <button pButton pRipple [label]="'Lưu'" icon="pi pi-check"
+        class="p-button-text p-button-success p-button-sm p-confirm-dialog-approve mt-4" (click)="save()"></button>
+</div>

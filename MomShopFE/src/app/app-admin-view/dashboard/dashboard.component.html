@@ -1,0 +1,51 @@
+<div class="user">
+    <div class="card" style="margin: 0 40px; height: 85%;">
+        <div style="margin: 20px; overflow-y:scroll; ">
+            <h4 class="mt-4">Dashboard</h4>
+            <hr class="hr-line">
+            <div class="">
+                <h5 class="mb-2">Sản phẩm nổi bật</h5>
+                <hr class="hr-line">
+                <div *ngIf="products.length > 0">
+                    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+                        <ng-template let-product pTemplate="item">
+                            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                                <div class="mb-3" style="height: 200px">
+                                    <img src="{{this.baseUrl}}/{{ product.imageUrl }}" [alt]="product.name" class="w-6 shadow-2" style="width: 40%; object-fit: cover;"/>
+                                </div>
+                                <div>
+                                    <h4 class="mb-1">{{ product.name }}</h4>
+                                    <h6 class="mt-0 mb-3">{{ product.price + ' VNĐ'}}</h6>
+                                    <p-tag
+                                        styleClass="p-tag-{{ ProductStatus.getProductStatus(product.status)}}" 
+                                        severity="{{ ProductStatus.getProductTag(product.status) }}" 
+                                        value="{{ ProductStatus.getProductStatus(product.status) }}">
+                                    </p-tag>
+                                    <div class="car-buttons mt-4">
+                                        <p-button type="button" styleClass="p-button p-button-rounded mr-2" icon="pi pi-search"></p-button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+            
+            <hr class="hr-line">
+            <h5 class="mb-2">Đơn hàng / Nhập hàng</h5>
+            <hr class="hr-line">
+            <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+            <hr class="hr-line">
+            <div class="row">
+                <h5 class="col-2">Doanh thu theo tháng</h5>
+                <div class="row col-10">
+                    <p-calendar class="col-2" [(ngModel)]="timeSearch" view="month" dateFormat="mm/yy" [readonlyInput]="true"></p-calendar>
+                    <p-button class="col-1" icon="pi pi-search" (click)="getChartMonth()"></p-button>
+                    <p-button class="col-2" icon="pi pi-file-excel" (click)="getChartMonth()" label="Xuất báo cáo"></p-button>
+                </div>
+            </div>
+            <hr class="hr-line">
+            <p-chart type="bar" [data]="dataEachMonth" [options]="options"></p-chart>
+        </div>
+    </div>
+</div>

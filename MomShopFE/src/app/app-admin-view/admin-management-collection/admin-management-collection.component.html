@@ -1,0 +1,82 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<div class="container1">
+	<div class="user">
+		<div class="card p-fluid" style="margin: 0 40px;">
+			<div style="margin: 20px">
+				<div style="float: right; margin-right: 40px">
+					<!-- <button class="btn btn-filter mr-2 btn-outline-primary"  (click)="viewDetailProduct()">Xem chi tiết</button> -->
+					<button class="btn btn-add btn-primary text-white" (click)="createCollection()"> <i class="pi pi-plus"
+							style="font-size: 0.7rem; color: 'var(--primary-color)'"></i> Thêm</button>
+					<button *ngIf="!filter" class="btn btn-filter mr-2 btn-primary text-white" (click)="onFilterChange()">Hiện bộ
+						lọc</button>
+					<button *ngIf="filter" class="btn btn-filter mr-2 btn-primary text-white" (click)="onFilterChange()">Ẩn bộ
+						lọc</button>
+					<!-- <button class="btn btn-add mr-2 btn-outline-primary"  (click)="createUsers()">Thêm</button> -->
+					<!-- <button class="btn btn-add ml-2 btn-outline-primary" [disabled]="!selectedProduct" (click)="editUser()">Sửa</button> -->
+					<!-- <button class="btn btn-add ml-2 btn-delete btn-outline-danger" [disabled]="!selectedProduct" (click)="deleteUser()">Xoá</button> -->
+				</div>
+				<div class="row mb-2" *ngIf="filter">
+					<div class="col-md-3">
+						<label class="mb-2" htmlFor="listStatus">Trạng thái<span class="required-field"></span></label>
+						<p-dropdown [options]="listStatus" [(ngModel)]="filterStatus" placeholder="Trạng thái"
+							[style]="{'height':'40px','width':'100%'}" (onChange)="getData()" optionLabel="code"
+							optionValue="value"></p-dropdown>
+					</div>
+					<div class="col-md-3">
+						<label class="mb-2" htmlFor="listStatus">Tên/Mã<span class="required-field"></span></label>
+						<input type="text" name="keyword" class="input-text" [style]="{'height':'40px'}" pInputText
+							[(ngModel)]="keyword" placeholder="Nhập từ khóa"  (keyup)="startTimer()"/>
+					</div>
+				</div>
+				<p class="mb-3 title" style="color: #3e3f40; font-size: 20px;">Danh sách bộ sưu tập</p>
+				<p-table [value]="rows" scrollHeight="1000px" [paginator]="true" [rows]="20"
+					[rowsPerPageOptions]="[5,10,15,20]" [scrollable]="true" (onLazyLoad)="getData()"
+					[tableStyle]="{'min-width': '100%' ,'font-size':'1rem'}" paginatorPosition="bottom" [columns]="cols"
+					[(selection)]="selectedCollection">
+					<ng-template pTemplate="header" let-columns>
+						<tr>
+							<th *ngFor="let cols of columns">
+								{{cols.header}}
+							</th>
+							<th style="width: 10rem;">Trạng thái</th>
+							<th style="min-width: 1rem; max-width: 1rem;"><i class="pi pi-cog"
+									style="font-size: 1rem"></i></th>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="body" let-rows let-rowIndex="rowIndex" let-columns="columns">
+						<tr [pSelectableRow]="rows">
+							<td *ngFor="let cols of columns">
+								{{rows[cols.field]}}
+							</td>
+							<td>
+								<p-tag
+                                    styleClass="p-tag-{{ CollectionStatus.getOrderStatus(rows.status)}}" 
+                                    severity="{{ CollectionStatus.getOrderTag(rows.status) }}" 
+                                    value="{{ CollectionStatus.getOrderStatus(rows.status) }}">
+                                </p-tag>
+							</td>
+							<td style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+								alignFrozen="right" [frozen]="true" class=" b-border-frozen-right b-table-actions">
+								<ng-template [ngIf]="true">
+									<i class="pi pi-ellipsis-v" style="padding: 10px 20px"
+										(click)="menu.toggle($event)"></i>
+									<p-menu #menu [popup]="true" appendTo="body"
+										[model]="listAction[rowIndex]"></p-menu>
+								</ng-template>
+							</td>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="emptymessage">
+						<tr>
+							<td colspan="7">Không có dữ liệu.</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+		</div>
+	</div>
+	<!-- <td>{{detailProduct}}</td> -->
+	<!-- <app-admin-view-detail-product #viewDetail></app-admin-view-detail-product>
+<app-create-or-edit-product #createOrEdit (modalSave)="getProductData()"></app-create-or-edit-product>
+<app-create-or-edit-detail-product #createOrEditDeatail (modalSave)="getDetailProductData()"></app-create-or-edit-detail-product> -->

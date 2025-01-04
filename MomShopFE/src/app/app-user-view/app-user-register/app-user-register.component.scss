@@ -1,0 +1,76 @@
+.form-register{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Cousine Regular", sans-serif !important;
+}
+.form-input{
+    width: 30%;
+}
+.input{
+    width: 100%;
+    padding-left: 20px;
+    height: 55px;
+    padding: 5px 20px;
+    color: #5c5c5c;
+    font-weight: 500;
+    border: 1px solid transparent;
+    background: #ededed;
+    font-family: "Cousine Regular", sans-serif !important;
+
+}.input:focus{
+    background: #fff;
+    border-color: #ededed !important;
+}
+.note-footer{
+    width: 30%;
+    margin-top: 20px;
+    font-family: "Cousine Regular", sans-serif !important;
+}
+.form-footer{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.btn-login{
+    width: 45%;
+    height: 49px;
+    background-color: black;
+    color:white;
+    font-size: 16px;
+    border: none;
+    font-weight: bold;
+}
+.text-footer{
+    width: 54%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.text-forgot-password{
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+.text-register{
+    margin-bottom: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color:black
+}
+.text-gray{
+    color:#959898
+}
+label{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.input-radio{
+    background-color: gainsboro;
+    color:gainsboro
+}
+.p-calendar{
+    height: 49px;
+    width: 100%;
+}

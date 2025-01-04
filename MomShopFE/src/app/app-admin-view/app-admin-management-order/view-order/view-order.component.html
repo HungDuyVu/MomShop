@@ -1,0 +1,33 @@
+<div class="word-container">
+    <div class="header">
+        <!-- Thêm nội dung phần header tại đây -->
+        <h1>Hóa đơn bàn hàng</h1>
+    </div>
+    <div class="content">
+        <h6>Mã hóa đơn: {{ order.orderCode }}</h6>
+        <h6>Tên khách hàng: {{ order.customerName }}</h6>
+        <h6>Địa chỉ: {{ order.address }}</h6>
+        <h6>Email: {{ order.email }}</h6>
+        <h6>SĐT: {{ order.phone }}</h6>
+        <h6>Ngày đặt hàng: {{ order.createdDate }}</h6>
+        <!-- Thêm nội dung bảng hoặc văn bản tương tự tệp Word tại đây -->
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+            </tr>
+            <tr *ngFor="let row of orderDetails">
+                <td>{{ row.productCode }}</td>
+                <td>{{ row.productName }}</td>
+                <td>{{ row.quantity }}</td>
+                <td>{{ row.price }}</td>
+                <td>{{ row.quantity * row.price }}</td>
+              </tr>
+            <!-- Các hàng dữ liệu khác -->
+        </table>
+        <p>Tổng tiền: {{ order.totalAmount }}</p>
+    </div>
+</div>

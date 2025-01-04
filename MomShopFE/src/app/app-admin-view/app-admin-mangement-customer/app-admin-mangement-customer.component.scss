@@ -1,0 +1,90 @@
+
+// .btn-add:disabled{
+//     background-color: gainsboro;
+// }
+p-table{
+    height: 80%;
+}
+.filter{
+    height: 20px;
+}
+.input-text{
+    height: 35px;
+    width: 100%;
+}
+
+
+:host ::ng-deep{
+    .chevron::before {
+      border-style: solid;
+      border-width: 0.15em 0.15em 0 0;
+      content: "";
+      display: inline-block;
+      height: 0.35em;
+      left: 0.15em;
+      position: relative;
+      top: 0.3em;
+      vertical-align: top;
+      width: 0.35em;
+    }
+    .p-datatable .p-datatable-thead > tr > th{
+      border: 1px solid #f1e7e7 !important
+    }
+    .sidebar {
+      font-family: "Mulish";
+        position: fixed;
+      //  left: 0;
+      //  top: 0;
+      height: 100vh;
+      // height: 300px;
+      width: 274px;
+    
+      background: #fcfbff;
+      .header {
+        width: 80%;
+        height: 14%;
+        margin-top: 10px;
+      }
+      .title{
+          color:#3629B7;
+          margin: 0;
+          margin-left: 30px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 20px;
+          line-height: 18px;
+      }
+    
+    }
+    .content{
+      display: flex;
+      flex-direction: column;
+      justify-content: baseline;
+    }
+    .item
+    {
+      list-style-type: none;
+      color:#76809B;
+      height: 60px;
+      width: 100%;
+      padding-left: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+    .item:hover{
+      background-color: #f4f4f4;
+    }
+    .item-menu{
+     padding: 0;
+     margin: 0;
+     flex-direction: column;
+     //display: flex;
+    }
+  }
+  .active{
+    color:black;
+    font-weight: bold;
+  }
+  

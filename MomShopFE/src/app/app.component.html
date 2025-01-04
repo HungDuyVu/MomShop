@@ -1,0 +1,7 @@
+<!-- <div class="main" *ngIf="visiableMain"> 
+         <app-admin-menu>
+        </app-admin-menu> 
+    </div>  -->
+<app-admin-menu *ngIf="user?.userType == 1">
+</app-admin-menu>
+<router-outlet></router-outlet>

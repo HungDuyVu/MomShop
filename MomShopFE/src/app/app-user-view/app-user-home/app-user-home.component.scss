@@ -1,0 +1,57 @@
+.banner{
+    background-image: url("/src/assets/banner.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.item-product{
+    width: 27%;
+    // flex-grow: 1;
+    // flex-shrink: 0;
+}
+.block-product{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    //height: 300px;
+    overflow-y: hidden;
+    position: relative;
+}
+.icon-next{
+    font-size: 30px;
+}
+.icon-prev{
+    position: absolute;
+    top:30%;
+    left:0;
+    font-size: 50px;
+    cursor: pointer;
+}
+.icon-next{
+    position: absolute;
+    top:30%;
+    right:0;
+    font-size: 50px;
+    cursor: pointer;
+}
+.image-product{
+    border-radius: 5px;
+    cursor: pointer;
+}
+.image-product:hover .image-product{
+    zoom: 150%;
+}
+.name-product{
+    font-family: "SVN-Gilroy";
+    cursor: pointer;
+}
+.name-product:hover{
+    color: #fcaf17; 
+}
+.price-product{
+    color:#000000;
+    font-weight: 500;
+}

@@ -1,0 +1,156 @@
+<div class="check-out container">
+    <div class="user-information row col-6">
+        <p class="title-page">MomShop Official Store</p>
+        <div class="nav-page">
+            <a class="text-cart text-decoration-none" href="/cart">Giỏ hàng</a>
+            <i class="fa-solid fa-greater-than"></i>
+            <span>Thông tin giao hàng</span>
+        </div>
+        <div class="information-delivery">
+            <div class="title-delivery mt-3">Thông tin giao hàng</div>
+            <!-- <p *ngIf="!user" class="sub-title mt-2">
+                Bạn đã có tài khoản? <a href="/login" class="text-login text-decoration-none">Đăng nhập</a>
+            </p> -->
+            <form class="form-information col-12">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <input type="text" placeholder="Họ và tên" class="col-12 input" name="FullName"
+                            [(ngModel)]="userInfo.fullName">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 d-flex justify-content-between">
+                        <input type="text" placeholder="Email" class="input email-input" name="email"
+                            [(ngModel)]="userInfo.email">
+                        <input type="text" placeholder="Số điện thoại" class="input phone-input" name="phone"
+                            [(ngModel)]="userInfo.phone">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <input type="text" placeholder="Địa chỉ" class="col-12 input" name="address"
+                            [(ngModel)]="userInfo.address">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 d-flex justify-content-between">
+                        <input type="text" placeholder="Quận / huyện" class="input district-input"
+                            [(ngModel)]="userInfo.province">
+                        <input type="text" placeholder="Tỉnh / thành" class="input province-input"
+                            [(ngModel)]="userInfo.district">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="title-delivery mt-3 mb-3">Phương thức vận chuyển</div>
+                    <div class="col-12 d-flex justify-content-between delivery">
+                        <div class="delivery-method d-flex">
+                            <div class="block-delivery">
+                                <!-- <i class="fa-solid fa-circle icon-delivery"></i> -->
+                                <p-radioButton name="delivery" value="delivery" [disabled]="true"
+                                    [(ngModel)]="delivery"></p-radioButton>
+                                <span class="text-delivery">Giao hàng tận nơi</span>
+                            </div>
+                            <span class="fee-delivery">30.000đ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="title-delivery mt-3 mb-3">Phương thức thanh toán</div>
+                    <div class="col-12 d-flex justify-content-between ">
+                        <div class="payment d-flex">
+                            <div class="payment-method d-flex">
+                                <!-- <i class="fa-solid fa-circle icon-delivery"></i> -->
+                                <p-radioButton name="cod" value="cod" [(ngModel)]="payOption"></p-radioButton>
+
+                                <span class="text-delivery">Thanh toán khi giao hàng (COD)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between mt-4">
+                        <div class="payment d-flex">
+                            <div class="payment-method d-flex">
+                                <p-radioButton name="bank" value="bank" [(ngModel)]="payOption"></p-radioButton>
+                                <!-- <i class="fa-solid fa-circle icon-delivery"></i> -->
+                                <span class="text-delivery">Thanh toán bằng chuyển khoản</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-form d-flex justify-content-between align-items-center">
+                    <a href="/cart" class="link-cart text-decoration-none">Giỏ hàng</a>
+                    <button *ngIf="!isPayment" type="submit" class="btn-completed" (click)="completeCheckOut()">Hoàn tất
+                        đơn hàng</button>
+                    <button *ngIf="isPayment" type="submit" class="btn-completed" (click)="returnView()">Về trang
+                        chủ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="order-information">
+        <div class="product mb-3" *ngFor="let product of products">
+            <div class="detail-product row ">
+                <div class="col-3 img-product d-flex">
+                    <img src="{{baseUrl}}/{{ product.imageUrl}}" class="image-product" alt="" width="100" height="100">
+                    <span class="product-thumbnail-quantity" aria-hidden="true">{{product.quantity}}</span>
+                </div>
+                <div class="col-6 description align-items-center d-flex">
+                    <span class="name-product">{{product.productName | uppercase}}</span>
+                    <br>
+                    <span class="size">{{product.size}}</span>
+                </div>
+                <div class="col-3 price-product align-items-center d-flex align-items-end">
+                    <p>{{product.quantity*product.price | currency:"VND":"symbol"}}</p>
+                </div>
+            </div>
+        </div>
+        <hr class="hr-line">
+        <div class="row mb-3 sale-off">
+            <div class="d-flex justify-content-between block-sale-off">
+                <select class="input-sale-off" (change)="saleOffChange($event)">
+                    <option value="" disabled selected>Mã giảm giá</option>
+                    <option *ngFor="let option of discounts" [value]="option.discountCode">
+                        {{ option.discountCode }}
+                    </option>
+                </select>
+                <!-- <input type="text" placeholder="Mã giảm giá" (keyup)="saleOff()" class="input-sale-off" [(ngModel)]="saleOffs"> -->
+                <!-- <button type="button" [disabled]="!saleOffs.trim()" class="buttton-use" (click)="useDisCount()">Sử dụng</button> -->
+                <button type="button" [disabled]="!saleOffs" class="buttton-use" (click)="useDisCount()">Sử
+                    dụng</button>
+            </div>
+        </div>
+        <hr *ngIf="!user" class="hr-line">
+        <div *ngIf="!user" class="loyal-customer">
+            <span class="text-loyalty">Khách hàng thân thiết</span>
+            <button type="button" (click)="login()" class="btn-login">Đăng nhập</button>
+        </div>
+        <hr class="hr-line">
+        <div class="product-fee">
+            <div class="provisional-fee d-flex justify-content-between mb-2">
+                <span class="text-gray">Tạm tính:</span>
+                <span class="text-fee">{{totalPrice | currency:"VND":"symbol"}}</span>
+            </div>
+            <div class=" d-flex justify-content-between mb-2">
+                <span class="text-gray">Chiết khấu:</span>
+                <span class="text-fee">0đ</span>
+            </div>
+            <div class="delivery-fee d-flex justify-content-between mb-2">
+                <span class="text-gray">Phí vận chuyển</span>
+                <span class="text-fee">30.000đ</span>
+            </div>
+            <!-- <div class="delivery-fee d-flex justify-content-between mb-2">
+                <span class="text-gray">Điểm tích lũy</span>
+                <span class="text-fee">0đ</span>
+            </div> -->
+            <div class="delivery-fee d-flex justify-content-between">
+                <span class="text-gray">Giảm giá</span>
+                <span class="text-fee">{{this.totalPrice*this.discount/100 | currency:"VND":"symbol"}}</span>
+            </div>
+        </div>
+        <hr class="hr-line">
+        <div class="total-fee-product">
+            <span>Tổng cộng</span>
+            <span class="text-fee-total"><span class="text-unit">VND</span>{{totalAmount |
+                currency:"VND":"symbol"}}</span>
+        </div>
+    </div>
+</div>

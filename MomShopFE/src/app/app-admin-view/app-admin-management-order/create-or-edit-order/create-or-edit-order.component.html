@@ -1,0 +1,191 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: 'auto', 'min-width': '300px'}" header="Thông báo"
+    [baseZIndex]="10000"></p-confirmDialog>
+<div class="container1">
+    <div class="user">
+        <div class="mb-2">
+            <button (click)="backToCollectionList()" pButton pRipple type="button" icon="pi pi-angle-left"
+                class="p-button-rounded p-button-text" label="Quay lại"></button>
+        </div>
+        <div class="card p-fluid" style="margin: 0 40px; height: 75%">
+            <div class="row" style="margin: 20px; overflow-y: scroll; max-height: 100%;">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Người đặt<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="order.customerName" type="text" id="code" name="code" pInputText readonly
+                                maxlength="256" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="createdDate">Ngày gian giao hàng dự kiến<span
+                                    class="required-field"> *
+                                </span>
+                            </label>
+                            <p-calendar name="intendedTime" value="intendedTime" [(ngModel)]="order.intendedTime" readonly
+                                dateFormat="dd/mm/yy" [style]="{'width':'100%',}" [showButtonBar]="true"></p-calendar>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="createdDate">Ngày đặt hàng<span class="required-field"> *
+                                </span>
+                            </label>
+                            <p-calendar name="createdDate" value="createdDate" [(ngModel)]="order.createdDate" readonly
+                                dateFormat="dd/mm/yy" [style]="{'width':'100%'}" [showButtonBar]="true"></p-calendar>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="field mb-1">
+                            <label class="mb-2" htmlFor="status">Trạng thái<span class="required-field"> * </span>
+                            </label>
+                            <p-dropdown appendTo="body" optionValue="code" name="status" optionLabel="name"
+                                [(ngModel)]="order.orderStatus" [options]="statuses" [style]="{'width':'100%'}">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="!isEdit">
+                    <div class="col-6">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Địa chỉ nhận hàng<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="addressDisplay" type="text" id="code" name="code" pInputText readonly
+                                maxlength="256" />
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Hình thức thanh toán<span class="required-field"> </span>
+                            </label>
+                            <input [(ngModel)]="paymentTypeDisplay" type="text" id="code" name="code" pInputText readonly 
+                                maxlength="256" />
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Đơn vị vận chuyển<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="delivery" type="text" id="code" name="code" pInputText
+                                maxlength="256" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="isEdit">
+                    <div class="col-3">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Địa chỉ<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="order.customerName" type="text" id="code" name="code" pInputText
+                                maxlength="256" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Quận/Huyện<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="order.customerName" type="text" id="code" name="code" pInputText
+                                maxlength="256" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Quốc Gia<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="order.customerName" type="text" id="code" name="code" pInputText
+                                maxlength="256" />
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="field">
+                            <label class="mb-2" htmlFor="code">Đơn vị vận chuyển<span class="required-field"> * </span>
+                            </label>
+                            <input [(ngModel)]="delivery" type="text" id="code" name="code" pInputText
+                                maxlength="256" />
+                        </div>
+                    </div>
+                </div>
+                <h5 class="mb-2 mt-4">Thông tin chi tiết</h5>
+                <hr class="hr-line">
+
+                <p-table #table [value]="order.orderDetails" [columns]="cols" [rowHover]="true"
+                    [showCurrentPageReport]="true" [paginator]="false" responsiveLayout="scroll" dataKey="id"
+                    [resizableColumns]="false" [scrollable]="true" styleClass="custom-table">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th style="max-width: 10rem; min-width: 10rem;" pFrozenColumn alignFrozen="left"
+                                class="b-border-frozen-left">Ảnh</th>
+                            <th *ngFor="let col of columns"
+                                [ngStyle]="{'max-width': !col?.isPin ? col?.width : '', 'min-width': col?.width}"
+                                [ngClass]=" col?.class ">
+                                {{ col?.header }}
+                            </th>
+                            <!-- <th style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+                                class="b-border-frozen-right" alignFrozen="right" [frozen]="true">
+                                <i class="pi pi-cog"></i>
+                            </th> -->
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-row let-rowIndex="rowIndex" let-columns="columns">
+                        <tr>
+                            <td style="max-width: 5rem; min-width: 5rem;" pFrozenColumn alignFrozen="left"
+                                class="b-border-frozen-left">
+                                <img style="width: 150px; height: 150px; object-fit: cover;"
+                                    src="{{baseUrl}}/{{ row.imageUrl}}">
+                            </td>
+                            <td *ngFor="let col of columns"
+                                [ngStyle]="{'max-width': !col?.isPin ? col?.width : '', 'min-width': col?.width}"
+                                [ngClass]=" col?.class">
+                                <div [ngClass]="col?.cutText" [title]="row[col?.field]">
+                                    {{ row[col?.field]}}
+                                </div>
+                            </td>
+                            <!-- <td style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+                                alignFrozen="right" [frozen]="true" class="b-border-frozen-right b-table-actions">
+                                <div class="flex">
+                                    <i class="pi pi-ellipsis-h" (click)="menu.toggle($event)"></i>
+                                    <p-menu #menu [popup]="true" class="button-actions" [model]=" "
+                                        appendTo="body">
+                                    </p-menu>
+                                </div>
+                            </td> -->
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="7">Không có dữ liệu.</td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="loadingbody">
+                        <tr>
+                            <td colspan="7"> Đang tải dữ liệu ... </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+
+                <div *ngIf="events.length > 0">
+                    <h5 class="mb-2 mt-4">Trạng thái</h5>
+                    <hr class="hr-line">
+                    <div class="col-4">
+                        <p-timeline [value]="events">
+                            <ng-template pTemplate="content" let-event>
+                                <small class="p-text-secondary">{{ event.createdDate }}</small>
+                            </ng-template>
+                            <ng-template pTemplate="opposite" let-event>
+                                {{ event.summary }}
+                            </ng-template>
+                        </p-timeline>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-2">
+            <button style="float: right; margin-right: 40px; height: 40px;" pButton pRipple label="Lưu"
+                (click)="save()"></button>
+        </div>
+    </div>
+</div>

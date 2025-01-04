@@ -1,0 +1,304 @@
+.content {
+    margin-left: 100px;
+    transition: 0.3s;
+    &.sidebarExpanded {
+      margin-left: 160px;
+    }
+  }
+  /* App level styles */
+::ng-deep {
+  .text-dark {
+      color: black !important;
+  }
+  .modal-footer{
+    border: none;
+}
+.ng-trigger {
+    padding:0
+}
+.p-inputtext{
+    width: 100%;
+    //height: 28px;
+}
+.p-datepicker-trigger {
+    height: 28px;
+}
+// .p-inputwrapper {
+//     width: 100%;
+// }
+  .modal-header-master {
+      border-bottom: 2px solid #c8102e;
+      padding: 0.55rem;
+      background: rgba(217, 217, 217, 0.5);
+      margin-bottom: 0% !important;
+  }
+// .p-inputwrapper {
+//     width: 100%;
+// }
+  .input-bottom-form {
+      margin-bottom: 20px !important;
+  }
+
+  .modal-body-master {
+      padding: 2.5rem !important;
+  }
+
+  .modal-footer-master {
+      padding: 9px 10px 9px 0px !important;
+  }
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+  .form-group-master {
+      margin-bottom: 5px;
+  }
+
+  .asterisks_lable_title {
+      color: rgb(150, 35, 35) !important;
+  }
+
+  .search-body-input {
+      padding: 10px 0px 10px 15px !important;
+  }
+
+  .validate_lable_input {
+      color: rgb(150, 35, 35);
+      margin-left: 20px;
+  }
+
+  .delete-assetgroup-button {
+      padding: 3px 7px 5px 7px;
+      background-color: rgb(233, 99, 99);
+  }
+
+  .delete-assetgroup-button:hover {
+      background-color: rgb(241, 60, 60);
+  }
+
+  .p-button-sm {
+      height: 25px;
+      padding: 0px 9px 0px 11px;
+
+  }
+
+  .p-datatable .p-datatable-tbody>tr>td {
+      padding: 4px 1rem;
+      text-align: center;
+  }
+
+  .p-button {
+      margin-right: 0.5rem;
+  }
+
+  // .p-datatable.p-datatable-gridlines .p-datatable-tbody > tr > td {
+  //     border: 1px !important;
+  // }
+
+  .p-datatable .p-datatable-thead>tr>th {
+      padding: 0.7rem 1rem;
+      text-align: center;
+  }
+
+  .form-group {
+      margin-bottom: 0px;
+  }
+
+  .gutter-b {
+      margin-bottom: 10px;
+  }
+
+  .content {
+      padding: 10px 0;
+  }
+
+  .container-fluid {
+      padding: 0 13px;
+  }
+
+  .header.header-fixed {
+      height: 40px !important;
+  }
+
+
+
+  @media (min-width: 992px) {
+      .brand {
+          height: 40px !important;
+      }
+
+  }
+
+  @media (min-width: 992px) {
+      .header-fixed.subheader-fixed .subheader {
+          top: 40px !important;
+      }
+
+  }
+
+  @media (min-width: 992px) {
+      .header-fixed.subheader-fixed.subheader-enabled .wrapper {
+          padding-top: 95px;
+      }
+
+  }
+
+  .last_column_vender_table {
+      padding: 5px 0px 5px 5px !important;
+      text-align: center !important;
+
+  }
+
+  .input-group-text {
+      border-top-right-radius: 0rem !important;
+      border-bottom-right-radius: 0rem !important;
+  }
+
+  h6 {
+      color: #00000085;
+  }
+
+  .card.card-custom > .card-body {
+      padding: 1rem 1.25rem;
+  }
+
+  .p-fileupload .p-fileupload-content {
+      display: none;
+  }
+  
+  .p-fileupload .p-fileupload-buttonbar {
+      padding: 0rem;
+      color: #343a40;
+      border: 0px none;
+      border-bottom: 0 none;
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+      background: none;
+  }
+
+  .p-fileupload .p-fileupload-buttonbar .p-button {
+      padding-left: 10px;
+      padding-right: 9px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      margin-bottom: 3px;
+  }
+
+}
+:host ::ng-deep{
+    .disabled{
+        background-color: #fff9f9;
+        color:black;
+    }
+    .btn-default{
+        border: 1px solid gainsboro;
+    }
+    .btn-default:hover{
+        background-color: red;
+        color:white;
+    }
+    .input-text{
+        height: 28px;
+    }
+    .label-text{
+        margin-bottom: 2px;
+        font-size:14px !important
+    }
+    .p-table{
+        min-height: 200px;
+    }
+    
+    .main{
+       overflow: hidden;
+       height: 100vh;
+    .p-element .p-dropdown.p-component
+   {
+    height: 35px;
+    display: flex !important;
+    align-items: center;
+   }
+}
+.user{
+    position: fixed;
+    top:44px;
+    left: 280px;
+    width: calc(100% - 280px);
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+}
+    p-dropdown{
+       display: flex;
+        align-items: flex-end;
+    }
+.container1{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    position: relative;
+    overflow: hidden
+}
+.btn-add{
+    width: 80px;
+    padding: 5px 10px;
+    color:blue;
+    // position: absolute;
+    // right: 0;
+    // top: 20px;
+    //z-index: 1;
+    margin-left: 5px;
+    right: 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.btn-add:hover{
+     //background-color: rgb(85, 85, 185);
+     color:white
+}
+.p-inputtext{
+    font-size: 0.8rem !important;
+}
+.p-inputwrapper{
+    font-size: 0.8rem !important;
+}
+.title{
+    font-size: 1rem;
+    font-weight: 600;
+    color:red
+}
+.p-dropdown-items{
+    font-size: 0.8rem !important;
+}
+.btn-delete{
+    color:red;
+}
+.btn{
+    font-size: 0.8rem;
+}
+.btn-delete:hover {
+    background-color: #dc3545;
+    color:white
+}
+.btn-filter{
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+.block-button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    right: 10px;
+}
+.btn-filter{
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+.line{
+    border:1px solid red;
+}
+}
+

@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div id="container" class="row"  style="margin-top:50px;margin-bottom:50px;margin-left:50px">
+    <div class="row col-lg-5 col-md-12 col-sm-12 col-12" style="position: relative;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 " style="height: auto;display: flex;">
+            <img alt="Card" src="{{baseUrl}}/{{ product.imageUrl}}"
+                style="width: 70%; object-fit: cover;" />
+        </div>
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="p-inputgroup" style="position: absolute;left:30%;width: 40%;">
+                <button type="button" pButton icon="pi pi-plus" styleClass="p-button-secondary"
+                    style="background: black;" (click)="plusQuantity(this.product)"></button>
+                <input type="text" pInputText placeholder="SL" [(ngModel)]="product" />
+                <button type="button" pButton icon="pi pi-minus" styleClass="p-button-secondary"
+                    style="background: black;"></button>
+            </div>
+        </div> -->
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-12" style="margin-left: 30px;">
+        <div class="product-info">
+            <h1 style="font-weight: bold;">{{ product.name | uppercase}}</h1>
+            <div style="margin-top:10px;margin-bottom:20px">
+                <h4 style="font-weight: bold;">{{product.price | currency:"VND":"symbol"}}</h4>
+            </div>
+            <div class="product-desc" style="margin-bottom: 5px">
+                <h4><strong>MÔ TẢ</strong></h4>
+                <p><strong>{{product.description}}</strong></p>
+                <!-- <p>• Chất liệu: Cotton cao cấp</p>
+                <p>• Graphic: In mặt trước và mặt sau</p>
+                <p>• Kỹ thuật: in lụa&nbsp;</p>
+                <p></p> -->
+            </div>
+
+            <div style="height: 4px;background: #000;margin: 20px 0 20px;"></div>
+
+            <div style="display:flex;align-items: center;">
+                <h2 class="text-uppercase font-weight-bold" style="font-weight: bold;display:block;margin-bottom: 0;">SIZE:</h2>
+                <div style="margin-left: 20px;">
+                        <div class="flex flex-wrap gap-3"  style="display:flex">
+                            <div class="d-flex align-items-center" style="display:flex" *ngFor="let item of productSize">
+                                <div>
+                                    <p-radioButton name="size" value="{{item.size}}" [(ngModel)]="value" ></p-radioButton>
+                                </div>
+                                <div>
+                                    <label style="margin-left: 5px; font-size: 24px">{{item.size}}</label>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div>
+                <div class="mt-3">
+                    <div style="margin-bottom: 15px;" class="mt-1">
+                        <a class="dialog size_guide" (click)="showDialog()">HƯỚNG DẪN CHỌN SIZE</a>
+                    </div>
+                    <div style="margin-bottom: 15px;" class="mt-1 pb-2">
+                        <a href="/general-trading-terms" class="policy_transfer">CHÍNH SÁCH ĐỔI TRẢ</a>
+                    </div>
+                    <button type="button" class="btn-addToCart" pButton icon="pi pi-shopping-cart" 
+                     (click)="addToCart(this.product)">THÊM VÀO GIỎ HÀNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+<p-dialog header="" [(visible)]="visible" [modal]="true" [style]="{ width: '35vw' }" [draggable]="false" [resizable]="false">
+    <img alt="SIZE" [src]="'https://file.hstatic.net/1000351433/file/z4271748746917_d7a617f8e97d7a93967234d33c717d91_9de2e72fcf624427a7558ca8e2d5e278_master.jpg'"
+                style="width: 90%;" />
+</p-dialog>

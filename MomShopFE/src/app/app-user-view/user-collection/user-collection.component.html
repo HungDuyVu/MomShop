@@ -1,0 +1,95 @@
+<app-header></app-header>
+<!-- <app-nav></app-nav> -->
+<div class="collection--wrap bg-left">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="d-none d-lg-block d-xl-block col-xl-2 col-lg-3 sidebar-collection" style="height: 100%;position: relative;">
+                <ul class="sidebar-menu">
+                    <li>
+                        <a title="BEST SELLER" target="_self" (click)="getProduct('all')">
+                            <span class="">BEST SELLER</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="BASIC LINE" target="_self" (click)="getProduct('all')">
+                            <span class="">BASIC LINE</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="TẤT CẢ SẢN PHẨM" target="_self" (click)="getProduct('all')">
+                            <span class="">TẤT CẢ SẢN PHẨM</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="ÁO THUN" target="_self" (click)="getProduct('t-shirt')">
+                            <span class="">ÁO THUN</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="ÁO SƠMI" target="_self" (click)="getProduct('shirt')">
+                            <span class="">ÁO SƠMI</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="ÁO KHOÁC" target="_self" (click)="getProduct('jacket')">
+                            <span class="">ÁO KHOÁC</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="QUẦN" target="_self" (click)="getProduct('short')">
+                            <span class="">QUẦN</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a title="PHỤ KIỆN" target="_self" (click)="getProduct('accessory')">
+                            <span class="">PHỤ KIỆN</span>
+                        </a>
+                    </li>
+                    <li *ngFor="let item of listCollection">
+                        <a  target="_self" (click)="getDetailCollection(item.id)">
+                            <span class="">{{item.name}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-md-12 col-12 content-collection">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <input type="text" [(ngModel)]="keyword" class="input-search" placeholder="Tìm kiếm sản phẩm..." (keyup)="startTimer()">
+                        <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="content-product-list product-list filter row">
+                    <div class="col-lg-3 col-md-6 col-6" *ngFor="let product of productsPagination"
+                        style="margin-bottom: 15px;text-align: center;">
+                        <p-card [style]="{ width: '100%'}">
+                            <ng-template pTemplate="header">
+                                <img alt="Card" src="{{baseUrl}}/{{ product.imageUrl == null ?
+                                 'api/file/get?folder=AP_001&fileName=banner.jpg':product.imageUrl}}"
+                                  height="400px" width="300px"
+                                    style="object-fit: cover;" />
+                                <p style="font-size: 24px;" class="mt-2" >
+                                    {{ product.name }}
+                                </p>
+                                <p-tag
+                                    styleClass="p-tag-{{ ProductStatus.getProductStatus(product.status)}}" 
+                                    severity="{{ ProductStatus.getProductTag(product.status) }}" 
+                                    value="{{ ProductStatus.getProductStatus(product.status) }}">
+                                </p-tag>
+                                
+                                <p style="font-size: 18px; margin-top: 8px;">
+                                    {{ product.price | currency:"VND":"symbol" }}
+                                </p>
+                                <p-button label="Detail" icon="pi pi-shopping-cart" styleClass="p-button"
+                                    (click)="showDetail(product)" [style]="{ 'margin-left': '.5em' }"></p-button>
+                            </ng-template>
+                        </p-card>
+                    </div>
+                </div>
+                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                    [totalRecords]="total"></p-paginator>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

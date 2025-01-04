@@ -1,0 +1,51 @@
+<app-header></app-header>
+<div class="profile">
+    <div class="container">
+        <div class="header mb-3">
+            <h5>Hồ sơ của tôi</h5>
+            <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+        </div>
+        <hr>
+        <div class="information">
+            <div class="d-flex justify-content-between align-items-baseline" style="width: 55%;">
+                <label for="username" class="color-text">Tên đăng nhập</label>
+                <input type="text" class="input text-secondary" name="fullNames" [(ngModel)]="user.fullName">
+            </div>
+            <div class="d-flex align-items-baseline" style="width: 55%;">
+                <label for="phone" class="color-text">Giới tính</label>
+                <div class="d-flex justify-content-between align-items-baseline" style="margin-left:80px;width:30%">
+                    <label for="" class="text-secondary">Nam</label>
+                    <input type="radio" class="input-radio mb-4" name="gender" value="Nam" [(ngModel)]="user.gender">
+                    <label for="" class="text-secondary">Nữ</label>
+                    <input type="radio" class="input-radio mb-4" name="gender" value="Nữ" [(ngModel)]="user.gender">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-baseline" style="width: 55%;">
+                <label for="address" class="color-text">Địa chỉ</label>
+                <input type="text" class="input" name="address" [(ngModel)]="user.address">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-baseline" style="width: 55%;">
+                <label for="phone" class="color-text">Quận/Huyện</label>
+                <input type="text" class="input" [(ngModel)]="user.district" name="district">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-baseline" style="width: 55%;">
+                <label for="phone" class="color-text">Thành phố</label>
+                <input type="text" class="input" [(ngModel)]="user.province" name="province">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-baseline" style="width: 55%;">
+                <label for="phone" class="color-text">Số điện thoại</label>
+                <input type="text" class="input text-secondary" [(ngModel)]="user.phone" name="phone">
+            </div>
+            <div class="d-flex align-items-baseline" style="width: 55%;">
+                <label for="dateOfBirth" class="color-text" style="margin-right: 60px;">Ngày sinh</label>
+                <p-calendar  value="user.birthday" dateFormat="dd/mm/yy" [(ngModel)]="user.birthDay" name="birthDay"
+                    [showIcon]="false" [style]="{'width':'100%','height':'100%'}"></p-calendar>
+            </div>
+            <button class="save-info" (click)="saveProfile()">Lưu</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

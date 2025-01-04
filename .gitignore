@@ -1,0 +1,19 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore temporary files
+*.tmp
+*.bak
+
+# Ignore files in Visual Studio project directories
+*.user
+*.suo
+*.cache
+*.dll
+*.vsidx
+*.v2
+*.v5.2
+*.cache
+*.editorconfig
+*.lock

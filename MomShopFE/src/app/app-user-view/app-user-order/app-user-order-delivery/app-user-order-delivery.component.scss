@@ -1,0 +1,131 @@
+.vod-progress-visualize {
+    height: 5px;
+    background-color: #bfb7b7;
+    width: calc(100% - calc(100%/3)) ;
+    //width: 100%;
+    position: absolute;
+    top: 53%;
+    margin-left: calc(calc(100% / 3)/2) ;
+    z-index: 0;
+  }
+  .vod-progress-color {
+    width: calc(100% / 3);
+    background-color: #cf6439;
+    height: 5px;
+  }
+  .block-process {
+    width: calc(100% / 4);
+    height: 100%;
+    z-index: 1;
+    //padding: 200px 0
+  }
+  .container {
+    height: 120px;
+    width: 83%;
+    position: relative;
+  }
+  .icon-image {
+    font-size: 30px;
+    //color: red;
+    display: flex;
+    align-items: center;
+    height: 65%;
+  }
+  .block-icon {
+    height: 70px;
+    border: 1px solid #a9a6a7;
+    border-radius: 50%;
+    width: 70px;
+    background-color: white;
+}
+.text-block{
+    font-weight: 700;
+    color:  #abadb9;
+    font-size: 14px;
+  }
+
+  .btn{
+    background-color: #faebd7;
+    font-size: 14px;
+    font-weight: 500;
+    color: #646c9a;
+    border: 1px solid gray;
+    border-radius: 5px;
+    color: red;
+    height: 48px;
+    width: 100%;
+  }
+.block-request{
+    display: flex;
+    justify-content: center;
+}
+.vod-button{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.time-process-vod{
+    color: #8c7d7d;
+    font-size: 12px;
+    width: calc(100% / 4);
+    height: 10%;
+    text-align:center;
+}
+.container-text {
+    height: 30px;
+    width: 83%;
+  }
+
+.fa:hover ~ i:before {
+    color: #ffdb70;
+}
+
+.fa:hover:before {
+    color: #ffc107;
+}
+.active {
+    color: #ffdb70;
+}
+.fa {
+    font-size: 20px;
+    margin-right: 5px;
+}
+label {
+    position: relative;
+    float: right;
+    color: #c8c8c8;
+}
+input{
+    display: none;
+}
+.block-time{
+    height:20%;
+}
+.btn-request{
+    width: 13%;
+}
+.btn-vod{
+    width:13%;
+    height: 100%;
+}
+.modal-content{
+  height: 80%;
+  padding-bottom: 100px;
+}
+.header{
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 100px;
+  width: 99%;
+}
+.close {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.container1{
+  max-width: 900px;
+  margin: 0 auto;
+}

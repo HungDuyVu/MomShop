@@ -1,0 +1,222 @@
+.check-out{
+    display: flex;
+    //padding-top: 100px !important;
+    display: flex;
+    justify-content: space-between;
+    //height: 100vw;
+}
+.user-information{
+    width: 50%;
+    padding-top: 90px;
+    padding-bottom: 100px;
+}
+.order-information{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-product{
+    border-radius: 8px;
+}
+.container{
+    max-width: 1190px;
+    margin: 0 auto;
+}
+.title-page{
+    font-weight: 550;
+    color:#000000;
+    font-size: 20px;
+}
+.nav-page{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 42%;
+    font-size: 13px;
+}
+.title-delivery{
+    font-weight: 500;
+    color:#000000;
+}
+.text-cart{
+    color:#338dbc
+    
+}
+.text-login{
+    color:#338dbc !important;
+}
+.sub-title,.text-delivery{
+    color:#737373;
+    font-size: 15px;
+}
+.input{
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding-left: 15px;
+    padding-top:7px;
+    padding-bottom: 7px;
+    font-size: 15px;
+}
+.email-input{
+    width: 70%;
+}
+.phone-input{
+    width: 28%;
+}
+.national-input,.province-input,.district-input,.ward-input{
+    width: 49%;
+}
+.delivery-method{
+    align-items: center;
+    justify-content: space-between;
+    border:1px solid #d9d9d9;
+    padding-left: 15px;
+    border-radius: 4px;
+    width: 100%;
+    padding: 8px;
+}
+.block-delivery{
+    width: 32%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon-delivery{
+    color:rgb(165, 165, 247)
+}
+.payment-method{
+    align-items: center;
+    justify-content: space-between;
+    width: 48%;
+}
+.payment{
+    width:100%;
+    border:1px solid #d9d9d9;
+    padding-left: 15px;
+    border-radius: 4px;
+    padding: 10px;
+}
+.btn-completed{
+    background-color: #338dbc;
+    padding:12px 10px;
+    border:none;
+    border-radius: 3px;
+    color:white;
+    float: right;
+}
+.footer-form{
+    margin-top: 30px;
+}
+.order-information{
+    background-color: #fafafa;
+    // padding-left: 30px;
+    width: 50%;
+    border-left:1px solid #d9d9d9;
+    padding: 100px 0;
+}
+.product{
+    // display: flex;
+    // justify-content: space-between;
+     //align-items:center;
+    width: 85%;
+}
+// .detail-product{
+//     display: flex;
+//     justify-content: space-between;
+//     width: 50%;
+//     align-items: center;
+// }
+.buttton-use{
+    width: 26%;
+    border:1px solid #d9d9d9;
+    background-color: #c8c8c8;
+    border-radius: 5px;
+    color:white
+}
+.input-sale-off{
+    border:1px solid #d9d9d9;
+    padding:10px;
+    border-radius: 5px;
+    width: 68%;
+}
+.container-product{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sale-off{
+    width: 85%;
+    padding:0
+}
+.block-sale-off{
+    padding:0
+}
+.btn-login{
+    color:white;
+    padding:10px;
+    border-radius: 5px;
+    background-color: #338dbc;
+    border: none;
+    width: 26%;
+}
+.loyal-customer{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-loyalty{
+    font-size: 18px;
+    color:#000000;
+}
+.product-fee{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+.text-gray{
+    color:#717171;
+    font-size: 15px;
+}
+.text-fee{
+    font-size: 14px;
+}
+.total-fee-product{
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.text-unit{
+    font-size: 14px;
+    color:#717171;
+    margin-right: 10px;
+}
+.hr-line{
+    height: 2px;
+    // border:1px solid red;
+    width: 85%;
+}
+
+::ng-deep {
+    .p-radiobutton .p-radiobutton-box.p-highlight {
+        border-color: rgb(165, 165, 247)!important;
+        background: rgb(165, 165, 247)!important;
+    }
+}
+.img-product {
+    position: relative;
+}
+.img-product .product-thumbnail-quantity {
+    font-size: 0.85714em;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.15em 0.65em;
+    border-radius: 2em;
+    background-color: rgba(153,153,153,0.9);
+    color: #fff;
+    position: absolute;
+    right: 0.25em;
+    top: -0.75em;
+    z-index: 2;
+}

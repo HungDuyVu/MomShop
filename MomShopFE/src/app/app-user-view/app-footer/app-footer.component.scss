@@ -1,0 +1,62 @@
+.footer-top{
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#000;
+    font-family: "Cousine Regular", sans-serif !important;
+}
+.note-footer{
+    font-weight: bold;
+    margin: 0;
+}
+.footer-content{
+    width: 100%;
+    font-family: "Cousine Regular", sans-serif !important;
+}
+.social-list{
+    margin-top: 30px;
+    display: flex;
+    width: 80%;
+}
+.item-block{
+    width: 20%;
+}
+.icon{
+    font-size: 35px;
+}
+.description-shop{
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+.address-list{
+    list-style-type: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #000;
+    font-size: 14px;
+}
+.address-list p{
+    margin:5px 0
+}
+.copyright a{
+    text-decoration: none;
+    color:#000
+}
+.item-menu-footer{
+    margin-bottom: 10px;
+    font-weight: bold;
+    list-style-type: none;
+    letter-spacing: 0.5;
+    font-size: 15px;
+    cursor: pointer;
+}
+.item-menu-footer a{
+    text-decoration: none;
+    color: #000;
+    list-style-type: none;
+}

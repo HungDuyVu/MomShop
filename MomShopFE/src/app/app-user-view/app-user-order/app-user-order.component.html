@@ -1,0 +1,57 @@
+<app-header></app-header>
+<!-- <div class="mb-5">
+    <app-nav></app-nav>
+</div> -->
+<div class="list-order mb-5">
+    <h2 class="text-center mb-5">Thông tin đơn hàng</h2>
+    <div class="container" *ngFor="let order of dataOrderPagination">
+        <div class="product">
+            <div class="row d-flex align-items-center">
+                <div class="col-8 d-flex align-items-center"><span class="order-code">Mã đơn hàng:
+                        {{order.orderCode}}</span></div>
+                <div class="col-4 d-flex justify-content-between align-items-center">
+                    <div class="block-transport" (click)="openModalStatusOrder(order.orderStatus)">
+                        <i class="fa-solid fa-truck"></i>
+                        <span class="text-status">{{order.statusName}}</span>
+                    </div>
+                    <hr class="sparate-line">
+                    <a class="vote text-decoration-none" *ngIf="order.orderStatus == 4" (click)="openModalVote(order)">Đánh Giá</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="detail-product mt-4" *ngFor="let item of order.details">
+            <img src="{{baseUrl}}/{{ item.imageUrl}}" alt="" width="100" height="100" class="image-product">
+            <div class="description-order">
+                <div>
+                    <p class="name-product">{{item.name}}</p>
+                    <p class="category-product">x{{item.quantity}}</p>
+                </div>
+                <div class="unit-price">
+                    <p class="price">{{item.total | currency:"VND":"symbol"}}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row d-flex justify-content-end pb-5 mt-3">
+            <div class="col-8">
+                <button *ngIf="order.orderStatus == 1" class="btn-cancel ml-3" (click)="cancelOrder(order.id)">Huỷ</button>
+                <button *ngIf="order.orderStatus == 4 || order.orderStatus == 5" class="btn-cancel ml-3" (click)="deleteOrder(order.id)">Xóa</button>
+            </div>
+            <div class="col-4">
+                <div class="block-payment">
+                    <i class="fa-sharp fa-solid fa-shield-halved icon-policy"></i>
+                    <span>Thành tiền:</span>
+                    <span class="fee">{{order.totalAmount | currency:"VND":"symbol"}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-5">
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                    [totalRecords]="total"></p-paginator>
+</div>
+<app-footer></app-footer>
+<app-user-vote #userVote></app-user-vote>
+<app-user-order-delivery #userstatusOrder></app-user-order-delivery>

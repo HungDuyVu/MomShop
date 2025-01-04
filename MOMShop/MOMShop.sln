@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MOMShop", "MOMShop\MOMShop.csproj", "{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCF93F28-7C8F-49B6-A55E-03D6535AC022}
+	EndGlobalSection
+EndGlobal

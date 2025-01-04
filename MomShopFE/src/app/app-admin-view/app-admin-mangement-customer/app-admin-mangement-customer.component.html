@@ -1,0 +1,91 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<div class="container1">
+	<div class="user">
+		<div class="card p-fluid" style="margin: 0 40px;">
+			<div style="margin: 20px">
+				<div style="float: right; margin-right: 40px">
+					<!-- <p-button label="Submit"></p-button> -->
+					<!-- <button class="btn btn-add btn-primary text-white" (click)="createReceiveOrder()"> <i
+							class="pi pi-plus" style="font-size: 0.7rem; color: 'var(--primary-color)'"></i>
+						Thêm</button> -->
+					<button *ngIf="!filter" class="btn btn-filter mr-2 btn-primary text-white"
+						(click)="onFilterChange()">Hiện bộ lọc</button>
+					<button *ngIf="filter" class="btn btn-filter mr-2 btn-primary text-white"
+						(click)="onFilterChange()">Ẩn bộ lọc</button>
+				</div>
+				<div class="row mb-2" *ngIf="filter">
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Trạng thái</label>
+						<p-dropdown [options]="CustomerConst.customerStatus" name="listStatus" [(ngModel)]="filterStatus"
+							placeholder="Trạng thái" [style]="{'height':'40px','width':'100%'}"
+							(onChange)="getAllCustomer()" optionLabel="name" optionValue="code"
+							placeholder="Trạng thái"></p-dropdown>
+					</div>
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Tìm kiếm</label>
+						<input type="text" name="keyword" class="input-text" [style]="{'height':'40px'}" pInputText
+							[(ngModel)]="keyword" placeholder="Nhập từ khóa" (keyup)="startTimer()" />
+					</div>
+
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Ngày</label>
+						<p-calendar  class="input-text" [(ngModel)]="date" (ngModelChange)="startTimer()"></p-calendar>
+					</div>
+				</div>
+				<p class="mb-2" style="font-size:24px;">Danh sách tài khoản khách hàng</p>
+				<p-table [value]="tableData" [paginator]="true" [rows]="20" [rowsPerPageOptions]="[5,10,15,20]" scrollHeight="680px"
+					(onLazyLoad)="getAllCustomer()" [tableStyle]="{'min-width': '100%-280px' ,'font-size':'1rem'}"
+					paginatorPosition="bottom" [columns]="cols" selectionMode="single" [(selection)]="selectedRow"
+					>
+					<ng-template pTemplate="header" let-columns>
+						<tr>
+							<th>STT</th>
+							<th *ngFor="let cols of columns">
+								{{cols.header}}
+							</th>
+							<th>Trạng thái</th>
+							<th style="max-width: 1rem; min-width: 1rem; justify-content: center;" pFrozenColumn
+                                class="b-border-frozen-right" alignFrozen="right" [frozen]="true">
+                                <i class="pi pi-cog"></i>
+                            </th>
+						</tr>
+					</ng-template>
+
+					<ng-template pTemplate="body" let-tableData="$implicit" let-rowIndex="rowIndex"
+						let-columns="columns">
+						<tr [pSelectableRow]="tableData">
+							<td>
+								{{rowIndex+1}}
+							</td>
+							<td *ngFor="let cols of columns">
+								{{tableData[cols.field]}}
+							</td>
+							<td>
+								<p-tag
+                                    styleClass="p-tag-{{ CustomerConst.getCustomerStatus(tableData.status)}}" 
+                                    severity="{{ CustomerConst.getCustomerTag(tableData.status) }}" 
+                                    value="{{ CustomerConst.getCustomerStatus(tableData.status) }}">
+                                </p-tag>
+							</td>
+							<td style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+								alignFrozen="right" [frozen]="true" class=" b-border-frozen-right b-table-actions">
+								<ng-template [ngIf]="true">
+									<i class="pi pi-ellipsis-v" style="padding: 10px 0px"
+										(click)="menu.toggle($event)"></i>
+									<p-menu #menu [popup]="true" appendTo="body"
+										[model]="listAction[rowIndex]"></p-menu>
+								</ng-template>
+							</td>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="emptymessage">
+						<tr>
+							<td colspan="9">Không có dữ liệu.</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+		</div>
+	</div>
+</div>

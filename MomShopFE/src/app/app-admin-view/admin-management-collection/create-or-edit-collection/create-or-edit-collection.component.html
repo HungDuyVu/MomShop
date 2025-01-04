@@ -1,0 +1,143 @@
+<p-toast></p-toast>
+<div class="container1">
+    <div class="user">
+        <div class="mb-2">
+            <button (click)="backToCollectionList()" pButton pRipple type="button" icon="pi pi-angle-left"
+                class="p-button-rounded p-button-text" label="Quay lại"></button>
+        </div>
+        <div class="card p-fluid" style="margin: 0 40px; overflow:scroll;">
+            <div class="row" style="margin: 20px">
+                <h5 class="mb-2" *ngIf="!collection.id">Thêm mới bộ sưu tập</h5>
+                <h5 class="mb-2" *ngIf="collection.id">Cập nhật thông tin bộ sưu tập</h5>
+                <hr class="hr-line">
+                <div class="col-3">
+                    <div class="field">
+                        <label class="mb-2" htmlFor="code">Mã bộ sưu tập<span class="required-field"> * </span>
+                        </label>
+                        <input [(ngModel)]="collection.code" type="text" id="code" name="code" pInputText
+                            maxlength="256" />
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="field">
+                        <label class="mb-2" htmlFor="name">Tên bộ sưu tập<span class="required-field"> * </span>
+                        </label>
+                        <input [(ngModel)]="collection.name" type="text" id="name" name="name" pInputText
+                            maxlength="256" />
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="field mb-1">
+                        <label class="mb-2" htmlFor="status">Trạng thái<span class="required-field"> * </span>
+                        </label>
+                        <p-dropdown appendTo="body" optionValue="code" name="status" optionLabel="name"
+                            [(ngModel)]="collection.status" [options]="statuses" [style]="{'width':'100%'}">
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="field">
+                        <label class="mb-2" htmlFor="description">Mô tả
+                        </label>
+                        <input [(ngModel)]="collection.description" type="text" id="description" name="description"
+                            pInputText maxlength="256" />
+                    </div>
+                </div>
+
+                <hr class="hr-line mt-4">
+
+                <h5 *ngIf="!collection.id" class="mb-3">Chọn sản phẩm</h5>
+                <h5 *ngIf="collection.id" class="mb-3" style="width: 92%;">Danh sách sản phẩm</h5>
+                <!-- <button *ngIf="collection.id" nstyle="float: right; margin-bottom: 20px; width: 120px; height: 40px;"
+                    pButton pRipple label="Cập nhật" (click)="updateProductCollection()"></button>
+                <hr class="hr-line"> -->
+                <p-table #table [value]="rows" [columns]="cols" [(selection)]="selectedItems" [rowHover]="true"
+                    [showCurrentPageReport]="true" [paginator]="false" responsiveLayout="scroll" dataKey="id"
+                    [resizableColumns]="false" [scrollable]="true" scrollHeight="{{ (screenHeight - 550) + 'px' }}"
+                    styleClass="custom-table">
+                    <ng-template pTemplate="caption">
+                        <div class="row">
+                            <div class="flex justify-content-between flex-column sm:flex-row col-2">
+                                <span class="mt-2 md:mt-0 p-input-icon-left">
+                                    <i class="pi pi-search"></i>
+                                    <input pInputText type="text" [(ngModel)]="keyword" style="min-width: 300px"
+                                    (keyup)="startTimer()" />
+                                </span>
+                            </div>
+                            <div class="col-8">
+                            </div>
+                            <div class="col-2" *ngIf="collection.id">
+                                <button pButton pRipple label="Cập nhật" style="height: 48px;"
+                                (click)="updateProductCollection()"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngIf="!collection.id" style="max-width: 3rem; min-width: 3rem;" pFrozenColumn
+                                alignFrozen="left" class="b-border-frozen-left">
+                                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                            </th>
+                            <th style="max-width: 10rem; min-width: 10rem;" pFrozenColumn alignFrozen="left"
+                                class="b-border-frozen-left">Ảnh</th>
+                            <th *ngFor="let col of columns"
+                                [ngStyle]="{'max-width': !col?.isPin ? col?.width : '', 'min-width': col?.width}"
+                                [ngClass]=" col?.class ">
+                                {{ col?.header }}
+                            </th>
+                            <!-- <th style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+                                class="b-border-frozen-right" alignFrozen="right" [frozen]="true">
+                                <i class="pi pi-cog"></i>
+                            </th> -->
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-row let-rowIndex="rowIndex" let-columns="columns">
+                        <tr>
+                            <td *ngIf="!collection.id" style="max-width: 3rem; min-width: 3rem;" pFrozenColumn
+                                alignFrozen="left" class="b-border-frozen-left">
+                                <p-tableCheckbox [value]="row"></p-tableCheckbox>
+                            </td>
+                            <td style="max-width: 5rem; min-width: 5rem;" pFrozenColumn alignFrozen="left"
+                                class="b-border-frozen-left">
+                                <img style="width: 150px; height: 150px; object-fit: cover;"
+                                    src="{{baseUrl}}/{{ row.imageUrl}}">
+                            </td>
+                            <td *ngFor="let col of columns"
+                                [ngStyle]="{'max-width': !col?.isPin ? col?.width : '', 'min-width': col?.width}"
+                                [ngClass]=" col?.class">
+                                <div [ngClass]="col?.cutText" [title]="row[col?.field]">
+                                    {{ row[col?.field]}}
+                                </div>
+                            </td>
+                            <!-- <td style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+                                alignFrozen="right" [frozen]="true" class="b-border-frozen-right b-table-actions">
+                                <div class="flex">
+                                    <i class="pi pi-ellipsis-h" (click)="menu.toggle($event)"></i>
+                                    <p-menu #menu [popup]="true" class="button-actions" [model]=" "
+                                        appendTo="body">
+                                    </p-menu>
+                                </div>
+                            </td> -->
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="7">Không có dữ liệu.</td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="loadingbody">
+                        <tr>
+                            <td colspan="7"> Đang tải dữ liệu ... </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <button style="float: right; margin-right: 40px; height: 40px;" pButton pRipple label="Lưu"
+                (click)="save()"></button>
+        </div>
+    </div>
+</div>

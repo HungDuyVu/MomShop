@@ -1,0 +1,53 @@
+<div appBsModal #createOrEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="createOrEditModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg d-flex justify-content-center">
+        <div class="modal-content">
+            <form (ngSubmit)="save()" autocomplete="off">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span>Đánh giá đơn hàng</span>
+                    </h4>
+                    <button type="button" class="close" (click)="close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mt-2">
+                        <div class="col-2 d-flex justify-content-between align-item-center mt-1">
+                            <input type="checkbox" />
+                            <label> <i (click)="changeColorIconStar(1)" class="fa-icon fa fa-star icon-vote"></i>
+                            </label>
+                            <input type="checkbox" />
+                            <label> <i (click)="changeColorIconStar(2)" class="fa-icon fa fa-star icon-vote"></i>
+                            </label>
+                            <input type="checkbox" />
+                            <label> <i (click)="changeColorIconStar(3)" class="fa-icon fa fa-star icon-vote"></i>
+                            </label>
+                            <input type="checkbox" />
+                            <label> <i (click)="changeColorIconStar(4)" class="fa-icon fa fa-star icon-vote"></i>
+                            </label>
+                            <input type="checkbox" />
+                            <label> <i (click)="changeColorIconStar(5)" class="fa-icon fa fa-star icon-vote"></i>
+                            </label>
+                        </div> 
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                                <fieldset>
+                                    <textarea name="evaluate" class="evaluate" cols="75" rows="10" [(ngModel)]="data.content" placeholder="Vui lòng nhập đánh giá của bạn..."></textarea>
+                                </fieldset>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" (click)="close()" class="btn-footer mr-4">
+                            Hủy
+                        </button>
+                        <button type="button" (click)="save()" class="btn-footer btn-save">
+                            Lưu
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

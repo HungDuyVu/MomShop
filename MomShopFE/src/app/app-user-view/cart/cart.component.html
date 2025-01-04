@@ -1,0 +1,138 @@
+<app-header></app-header>
+<div id="layout-cart">
+    <div class="wrapper-mainCart">
+        <div class="content-bodyCart">
+            <div class="container">
+                <!-- <div class="container">
+                    <p-fieldset legend="Thông tin giao hàng" >
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" pInputText [(ngModel)]="value" placeholder="Họ và tên"/>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" pInputText [(ngModel)]="value" placeholder="Email"/>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" pInputText [(ngModel)]="value" placeholder="Số điện thoại"/>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <input type="text" pInputText [(ngModel)]="value" placeholder="Địa chỉ"/>
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <label htmlFor="username">Phương thức vận chuyển</label>
+                            <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value" />
+                        </div>
+
+                        <div class="flex flex-column gap-2">
+                            <label htmlFor="username">Phương thức thanh toán</label>
+                            <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="value" />
+                        </div>
+
+                    </p-fieldset>
+                </div> -->
+                <div class="row" *ngIf="products.length == 0">
+                    <p class="title-cart-empty text-center mt-5">GIỎ HÀNG CỦA BẠN ĐANG TRỐNG</p>
+                    <div class="cart">
+                        <img style="width: 250px;" src="https://file.hstatic.net/1000351433/file/empty-cart_924e850940534647bace4fd790c132cf.svg">
+                    </div>
+                </div>
+                <div class="row" *ngIf="products.length != 0">
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-12 contentCart-detail">
+                        <div class="mainCart-detail">
+                            <div class="list-pageform-cart">
+                                <div class="cart-row">
+                                    <div class="table-cart">
+                                        <div class="media-line-item line-head"
+                                            style="display: flex;border-style: solid;font-weight: bold;text-align: center;">
+                                            <div class="media-title" style="width:30%">SẢN PHẨM</div>
+                                            <div class="item-qty" style="width:50%">SỐ LƯỢNG</div>
+                                            <div class="item-total-price" style="width:20%">GIÁ</div>
+                                        </div>
+                                        <div style="display: flex;border-bottom-style: solid;margin-bottom: 40px;" *ngFor="let product of products">
+                                            <div class="media-title" style="display: flex;width:60%; margin: 10px 0px;">
+                                                <div class="media-title" style="width:50%">
+                                                    <div class="media-title" style="width:50%"></div>
+                                                    <img
+                                                        src="{{baseUrl}}/{{ product.imageUrl}}" width="200px" height="200px" style="object-fit: cover;">
+                                                </div>
+                                                <div class="media-title"
+                                                    style="width:50%; font-weight: bold;position: relative;">
+                                                    <div style="margin: 0;
+                                                            position: absolute;
+                                                            top: 50%;
+                                                            -ms-transform: translateY(-50%);
+                                                            transform: translateY(-50%);">
+                                                        <p style="font-size: 24px">{{product.productName}}</p>
+                                                        <p>SIZE: {{product.size}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item-qty" style="width:20%;position: relative;">
+                                                <div class="p-inputgroup" style="margin: 0;position: absolute;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);">
+                                                    <button type="button" pButton icon="pi pi-plus" styleClass="p-button-secondary" style="background: black;" (click)="plusQuantity(this.product)"></button>
+                                                    <input type="text" pInputText  [(ngModel)]="product.quantity" (ngModelChange)="priceChange()"/>
+                                                    <button type="button" pButton icon="pi pi-minus"
+                                                        styleClass="p-button-secondary" (click)="minusQuantity(product)"
+                                                        style="background: black;"></button>
+                                                </div>
+                                            </div>
+                                            <div class="item-total-price" style="width:20%;position: relative; ">
+                                                <div style="margin: 0;
+                                                        position: absolute;
+                                                        top: 50%;
+                                                        -ms-transform: translateY(-50%);
+                                                        transform: translateY(-50%);right:2%;
+                                                        ">
+                                                    {{(product.quantity*product.price)| currency:"VND":"symbol"}}
+                                                    <button type="button" class="btn-delete-product" (click)="delete(product)"><i class="pi pi-trash" style="font-size: 1.2rem" ></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-row" style="margin-bottom: 20px;">
+                                    <div class="order-noted-block">
+                                        <div class="checkout-buttons clearfix">
+                                            <label for="note" class="note-label h5 font-weight-bold">GHI CHÚ ĐƠN HÀNG</label>
+                                            <textarea class="form-control" id="note" name="note" rows="5"
+                                                style="border-style: solid;border-width: unset;border-color: black;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-12 sidebarCart-sticky"  *ngIf="products.length > 0">
+                        <div class="mainCart-sidebar wrap-order-summary">
+                            <div class="order-summary-block">
+                                <h4 class="font-weight-bold summary-title">TỔNG HOÁ ĐƠN</h4>
+                                <div class="summary-total">
+                                    <span style="font-weight: bold;font-size: -webkit-xxx-large;">{{totalPrice + 'VND'}}</span>
+                                </div>
+                                <div class="summary-action">
+                                    <div class="summary-button" style="margin-bottom: 30px;margin-top: 30px;">
+                                        <a id="btnCart-checkout" class="checkout-btn btnred" (click)="checkout()"
+                                            style="text-decoration: none;
+                                            background: black;
+                                            color: white;
+                                            padding: 10px 10px 10px 10px;
+                                            font-size: x-large;
+                                            border-radius: 8px;
+                                            cursor: pointer;">THANH TOÁN </a>
+                                    </div>
+                                    <a class="button" href="/view" style="text-decoration: none;
+                                        background: black;
+                                        color: white;
+                                        padding: 10px 10px 10px 10px;
+                                        font-size: x-large;
+                                        border-radius: 8px;">TIẾP TỤC MUA SẮM</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

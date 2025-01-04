@@ -1,0 +1,84 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+<div class="container1">
+	<div class="user">
+		<div class="card p-fluid" style="margin: 0 40px;">
+			<div style="margin: 20px">
+				<div style="float: right; margin-right: 40px">
+					<button class="btn btn-add btn-primary text-white" (click)="createReceiveOrder()"> <i class="pi pi-plus"
+						style="font-size: 0.7rem; color: 'var(--primary-color)'"></i> Thêm</button>
+					<button *ngIf="!filter" class="btn btn-filter mr-2 btn-primary text-white"
+						(click)="onFilterChange()">Hiện bộ lọc</button>
+					<button *ngIf="filter" class="btn btn-filter mr-2 btn-primary text-white"
+						(click)="onFilterChange()">Ẩn bộ lọc</button>
+				</div>
+				<div class="row mb-2" *ngIf="filter">
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Trạng thái</label>
+						<p-dropdown [options]="listStatus" name="listStatus" [(ngModel)]="filterStatus"
+							placeholder="Trạng thái" [style]="{'height':'40px','width':'100%'}"
+							(onChange)="getReceiveOrderData()" optionLabel="name" optionValue="code" placeholder="Trạng thái"></p-dropdown>
+					</div>
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Tìm kiếm</label>
+						<input type="text" name="keyword" class="input-text" [style]="{'height':'40px'}" pInputText
+							[(ngModel)]="keyword" placeholder="Nhập từ khóa"  (keyup)="startTimer()"/>
+					</div>
+
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Ngày tạo đơn</label>
+						<p-calendar  class="input-text" [(ngModel)]="createdDate" (ngModelChange)="startTimer1()"></p-calendar>
+					</div>
+					<div class="col-3">
+						<label class="mb-1" for="listStatus">Ngày nhận hàng</label>
+						<p-calendar  class="input-text" [(ngModel)]="intendedTime" (ngModelChange)="startTimer2()"></p-calendar>
+					</div>
+				</div>
+				<p class="mb-2" style="font-size:24px;">Hóa đơn nhập hàng</p>
+				<p-table [value]="receiveOrderData" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]"
+					(onLazyLoad)="getReceiveOrderData()" [tableStyle]="{'width': '100% -280px','font-size':'1rem'}"
+					paginatorPosition="bottom" [columns]="cols" [(selection)]="selectedRow">
+					<ng-template pTemplate="header" let-columns>
+						<tr>
+							<th *ngFor="let cols of columns">
+								{{cols.header}}
+							</th>
+							<th style="width: 10rem;">Trạng thái</th>
+							<th style="min-width: 1rem; max-width: 1rem;"><i class="pi pi-cog"
+									style="font-size: 1rem"></i></th>
+						</tr>
+					</ng-template>
+
+					<ng-template pTemplate="body" let-tableData let-rowIndex="rowIndex" let-columns="columns">
+						<tr [pSelectableRow]="tableData">
+							<td *ngFor="let cols of columns">
+								{{tableData[cols.field]}}
+							</td>
+							<td>
+								<p-tag
+                                    styleClass="p-tag-{{ ReceivedOrderConst.getOrderStatus(tableData.status)}}" 
+                                    severity="{{ ReceivedOrderConst.getOrderTag(tableData.status) }}" 
+                                    value="{{ ReceivedOrderConst.getOrderStatus(tableData.status) }}">
+                                </p-tag>
+							</td>
+							<td style="max-width: 3rem; min-width: 3rem; justify-content: center;" pFrozenColumn
+								alignFrozen="right" [frozen]="true" class=" b-border-frozen-right b-table-actions">
+								<ng-template [ngIf]="true">
+									<i class="pi pi-ellipsis-v" style="padding: 10px 0px"
+										(click)="menu.toggle($event)"></i>
+									<p-menu #menu [popup]="true" appendTo="body"
+										[model]="listAction[rowIndex]"></p-menu>
+								</ng-template>
+							</td>
+						</tr>
+					</ng-template>
+					<ng-template pTemplate="emptymessage">
+						<tr>
+							<td colspan="7">Không có dữ liệu.</td>
+						</tr>
+					</ng-template>
+				</p-table>
+			</div>
+		</div>
+	</div>
+</div>
