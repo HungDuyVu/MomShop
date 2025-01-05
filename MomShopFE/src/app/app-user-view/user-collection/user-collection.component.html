@@ -3,7 +3,8 @@
 <div class="collection--wrap bg-left">
     <div class="container-fluid">
         <div class="row">
-            <div class="d-none d-lg-block d-xl-block col-xl-2 col-lg-3 sidebar-collection" style="height: 100%;position: relative;">
+            <div class="d-none d-lg-block d-xl-block col-xl-2 col-lg-3 sidebar-collection"
+                style="height: 100%;position: relative;">
                 <ul class="sidebar-menu">
                     <li>
                         <a title="BEST SELLER" target="_self" (click)="getProduct('all')">
@@ -46,7 +47,7 @@
                         </a>
                     </li>
                     <li *ngFor="let item of listCollection">
-                        <a  target="_self" (click)="getDetailCollection(item.id)">
+                        <a target="_self" (click)="getDetailCollection(item.id)">
                             <span class="">{{item.name}}</span>
                         </a>
                     </li>
@@ -55,7 +56,8 @@
             <div class="col-xl-10 col-lg-9 col-md-12 col-12 content-collection">
                 <div class="row mb-4">
                     <div class="col-12">
-                        <input type="text" [(ngModel)]="keyword" class="input-search" placeholder="Tìm kiếm sản phẩm..." (keyup)="startTimer()">
+                        <input type="text" [(ngModel)]="keyword" class="input-search" placeholder="Tìm kiếm sản phẩm..."
+                            (keyup)="startTimer()">
                         <button class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </div>
@@ -65,18 +67,16 @@
                         <p-card [style]="{ width: '100%'}">
                             <ng-template pTemplate="header">
                                 <img alt="Card" src="{{baseUrl}}/{{ product.imageUrl == null ?
-                                 'api/file/get?folder=AP_001&fileName=banner.jpg':product.imageUrl}}"
-                                  height="400px" width="300px"
-                                    style="object-fit: cover;" />
-                                <p style="font-size: 24px;" class="mt-2" >
+                                 'api/file/get?folder=AP_001&fileName=banner.jpg':product.imageUrl}}" height="400px"
+                                    width="300px" style="object-fit: cover;" />
+                                <p style="font-size: 24px;" class="mt-2">
                                     {{ product.name }}
                                 </p>
-                                <p-tag
-                                    styleClass="p-tag-{{ ProductStatus.getProductStatus(product.status)}}" 
-                                    severity="{{ ProductStatus.getProductTag(product.status) }}" 
+                                <p-tag styleClass="p-tag-{{ ProductStatus.getProductStatus(product.status)}}"
+                                    severity="{{ ProductStatus.getProductTag(product.status) }}"
                                     value="{{ ProductStatus.getProductStatus(product.status) }}">
                                 </p-tag>
-                                
+
                                 <p style="font-size: 18px; margin-top: 8px;">
                                     {{ product.price | currency:"VND":"symbol" }}
                                 </p>

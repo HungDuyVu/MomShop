@@ -36,4 +36,11 @@ export class UserService {
     getDetailCollection(id){
         return this.http.get(this.baseUrl+'collection/detail/'+id);
     }
+    changePassword(data: { email: string; password: string; newPassword: string }) {
+        return this.http.post(this.baseUrl + 'changepassword', data, { responseType: 'text' });
+    }
+    
+    forgotPassword(email: string) {
+        return this.http.post(this.baseUrl + 'forgotpassword', { email }, { responseType: 'text' });
+    }
 }

@@ -31,6 +31,34 @@ namespace MOMShop.Controllers
             }
         }
 
+        [HttpPost("forgotpassword")]
+        public APIResponse ForgotPassword([FromBody] LoginDto input)
+        {
+            try
+            {
+                var result = _services.ForgotPassword(input.Email);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        [HttpPost("changepassword")]
+        public APIResponse ChangePassword([FromBody] ChangePasswordUserDto input)
+        {
+            try
+            {
+                var result = _services.ChangePassword(input);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         [HttpPost("register")]
         public APIResponse Register([FromBody] RegisterDto input)
         {

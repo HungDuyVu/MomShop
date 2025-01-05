@@ -29,13 +29,13 @@ export class UserCollectionComponent {
   ProductStatus = ProductStatus;
   constructor(private router: Router,
     private http: HttpClient,
-    public productServices : UserProductService,
-    public userService : UserService
-    ) {
-      this.userService.getAllCollection().subscribe((result:any)=>{
-        this.listCollection = result.data;
-      })
-    }
+    public productServices: UserProductService,
+    public userService: UserService
+  ) {
+    this.userService.getAllCollection().subscribe((result: any) => {
+      this.listCollection = result.data;
+    })
+  }
 
   ngOnInit() {
     this.getProduct('all');
@@ -49,13 +49,18 @@ export class UserCollectionComponent {
     this.productsPagination = this.products.slice(this.first, (this.page + 1) * this.rows);
   }
 
-  showDetail(param){
-    this.router.navigate(['/collection-detail'], {queryParams: {id: param.id}});  
+  showDetail(param) {
+    console.log("collection detail", param.id);
+    console.log("this.router", this.router);
+
+
+    this.router.navigate(['collection-detail'], { queryParams: { id: param.id } });
+    //  
   }
 
-  getProduct(param){
+  getProduct(param) {
     console.log("k", this.keyword);
-    
+
     this.param = param;
     this.productServices.getShirt(param, this.keyword).pipe(finalize(() => {
       this.resetPage();
@@ -70,15 +75,15 @@ export class UserCollectionComponent {
       this.getProduct(this.param);
     }, 1000); // Thời gian chờ: 3000 milliseconds (3 giây)
   }
-  getDetailCollection(id){
+  getDetailCollection(id) {
     console.log("123142", id);
-      this.userService.getDetailCollection(id).subscribe((result:any)=>{
-        console.log(result.data);
-        this.productsPagination = result.data.products;
-      })
+    this.userService.getDetailCollection(id).subscribe((result: any) => {
+      console.log(result.data);
+      this.productsPagination = result.data.products;
+    })
   }
 
-  resetPage(){
+  resetPage() {
     this.first = 0;
     this.page = 0;
     this.productsPagination = this.products.slice(this.first, (this.page + 1) * this.rows);

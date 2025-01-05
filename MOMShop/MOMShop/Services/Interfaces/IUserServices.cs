@@ -9,5 +9,8 @@ namespace MOMShop.Services.Interfaces
         UserDto FindById(int id);
         APIResponse Register(RegisterDto input);
         string UpdateInforUser(UserDto input);
+
+        APIResponse ForgotPassword(string email);
+        APIResponse ChangePassword(ChangePasswordUserDto input);
     }
 }

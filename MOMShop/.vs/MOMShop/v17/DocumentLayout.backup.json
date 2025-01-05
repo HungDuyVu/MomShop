@@ -1,26 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\MomShop\\MOMShop\\",
+  "WorkspaceRootPath": "D:\\MOMShop\\MOMShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\projects\\momshop\\momshop\\momshop\\momshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\momshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\projects\\momshop\\momshop\\momshop\\services\\implements\\discoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\implements\\discoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\dto\\users\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\dto\\users\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\projects\\momshop\\momshop\\momshop\\controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\controllers\\discountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\projects\\momshop\\momshop\\momshop\\services\\interfaces\\idiscountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\dto\\users\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\dto\\users\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\services\\implements\\mail\\sendmailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\implements\\mail\\sendmailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\services\\interfaces\\mail\\isendmailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\interfaces\\mail\\isendmailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\services\\implements\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\implements\\orderservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\dto\\orderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\dto\\orderinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\utils\\apiresponse\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\utils\\apiresponse\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\utils\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\utils\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\services\\interfaces\\idiscountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\interfaces\\idiscountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\projects\\momshop\\momshop\\momshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\services\\implements\\discoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\services\\implements\\discoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\controllers\\receiveordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\controllers\\receiveordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\dto\\receiveorder\\createreceiveorderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\dto\\receiveorder\\createreceiveorderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|d:\\momshop\\momshop\\momshop\\momshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DDA3DF33-650F-4754-AC72-CF1FAA7DF878}|MOMShop\\MOMShop.csproj|solutionrelative:momshop\\momshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,30 +82,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DiscountController.cs",
-              "DocumentMoniker": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\Controllers\\DiscountController.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Controllers\\DiscountController.cs",
               "RelativeDocumentMoniker": "MOMShop\\Controllers\\DiscountController.cs",
-              "ToolTip": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\Controllers\\DiscountController.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Controllers\\DiscountController.cs",
               "RelativeToolTip": "MOMShop\\Controllers\\DiscountController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBkAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T18:08:45.29Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\appsettings.json",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\appsettings.json",
               "RelativeDocumentMoniker": "MOMShop\\appsettings.json",
-              "ToolTip": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\appsettings.json",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\appsettings.json",
               "RelativeToolTip": "MOMShop\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwBAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-01-03T18:29:50.728Z",
               "IsPinned": true
@@ -69,39 +121,198 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\Users\\LoginDto.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Dto\\Users\\LoginDto.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\Users\\LoginDto.cs*",
+              "RelativeToolTip": "MOMShop\\Dto\\Users\\LoginDto.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T05:36:00.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Controllers\\UserController.cs",
+              "RelativeToolTip": "MOMShop\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAiwC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:12:32.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\UserService.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Services\\Implements\\UserService.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\UserService.cs",
+              "RelativeToolTip": "MOMShop\\Services\\Implements\\UserService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAqwHwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:22:09.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Program.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Program.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Program.cs",
+              "RelativeToolTip": "MOMShop\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:46:13.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\Users\\UserDto.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Dto\\Users\\UserDto.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\Users\\UserDto.cs",
+              "RelativeToolTip": "MOMShop\\Dto\\Users\\UserDto.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAswDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T05:36:13.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SendMailService.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\Mail\\SendMailService.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Services\\Implements\\Mail\\SendMailService.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\Mail\\SendMailService.cs",
+              "RelativeToolTip": "MOMShop\\Services\\Implements\\Mail\\SendMailService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:17:35.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISendMailService.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Interfaces\\Mail\\ISendMailService.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Services\\Interfaces\\Mail\\ISendMailService.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Interfaces\\Mail\\ISendMailService.cs",
+              "RelativeToolTip": "MOMShop\\Services\\Interfaces\\Mail\\ISendMailService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:39:02.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderServices.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\OrderServices.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Services\\Implements\\OrderServices.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\OrderServices.cs",
+              "RelativeToolTip": "MOMShop\\Services\\Implements\\OrderServices.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAIwGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:51:46.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderInfo.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\OrderInfo.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Dto\\OrderInfo.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\OrderInfo.cs",
+              "RelativeToolTip": "MOMShop\\Dto\\OrderInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:53:23.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "APIResponse.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Utils\\APIResponse\\APIResponse.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Utils\\APIResponse\\APIResponse.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Utils\\APIResponse\\APIResponse.cs",
+              "RelativeToolTip": "MOMShop\\Utils\\APIResponse\\APIResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:21:40.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Utils\\SeedData.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Utils\\SeedData.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Utils\\SeedData.cs",
+              "RelativeToolTip": "MOMShop\\Utils\\SeedData.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T04:24:20.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CreateReceiveOrderDto.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\ReceiveOrder\\CreateReceiveOrderDto.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Dto\\ReceiveOrder\\CreateReceiveOrderDto.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Dto\\ReceiveOrder\\CreateReceiveOrderDto.cs",
+              "RelativeToolTip": "MOMShop\\Dto\\ReceiveOrder\\CreateReceiveOrderDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T14:23:14.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReceiveOrderController.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Controllers\\ReceiveOrderController.cs",
+              "RelativeDocumentMoniker": "MOMShop\\Controllers\\ReceiveOrderController.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Controllers\\ReceiveOrderController.cs",
+              "RelativeToolTip": "MOMShop\\Controllers\\ReceiveOrderController.cs",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAiwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T14:22:43.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "DiscoutService.cs",
-              "DocumentMoniker": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\Services\\Implements\\DiscoutService.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\DiscoutService.cs",
               "RelativeDocumentMoniker": "MOMShop\\Services\\Implements\\DiscoutService.cs",
-              "ToolTip": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\Services\\Implements\\DiscoutService.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Implements\\DiscoutService.cs",
               "RelativeToolTip": "MOMShop\\Services\\Implements\\DiscoutService.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAEwFMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAwGUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T18:34:27.922Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "IDiscountService.cs",
-              "DocumentMoniker": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\Services\\Interfaces\\IDiscountService.cs",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Interfaces\\IDiscountService.cs",
               "RelativeDocumentMoniker": "MOMShop\\Services\\Interfaces\\IDiscountService.cs",
-              "ToolTip": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\Services\\Interfaces\\IDiscountService.cs",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\Services\\Interfaces\\IDiscountService.cs",
               "RelativeToolTip": "MOMShop\\Services\\Interfaces\\IDiscountService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T18:33:35.16Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 17,
               "Title": "MOMShop.csproj",
-              "DocumentMoniker": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\MOMShop.csproj",
+              "DocumentMoniker": "D:\\MOMShop\\MOMShop\\MOMShop\\MOMShop.csproj",
               "RelativeDocumentMoniker": "MOMShop\\MOMShop.csproj",
-              "ToolTip": "D:\\Projects\\MomShop\\MOMShop\\MOMShop\\MOMShop.csproj",
+              "ToolTip": "D:\\MOMShop\\MOMShop\\MOMShop\\MOMShop.csproj",
               "RelativeToolTip": "MOMShop\\MOMShop.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-29T02:40:05.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-29T02:40:05.163Z"
             }
           ]
         }

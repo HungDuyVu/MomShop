@@ -13,7 +13,7 @@
         <input type="text" name="address" class="input mb-4" placeholder="Địa chỉ" [(ngModel)]="inputRegister.address">
         <input type="text" name="district" class="input mb-4" placeholder="Quận/Huyện" [(ngModel)]="inputRegister.district">
         <input type="text" name="province" class="input mb-4" placeholder="Thành phố" [(ngModel)]="inputRegister.province">
-        <input type="datetime-local" name="birthday" class="input mb-4" placeholder="dd/mm/yyyy" [(ngModel)]="inputRegister.birthday">
+        <input type="datetime-local" [max]="maxDate" name="birthday" class="input mb-4" placeholder="dd/mm/yyyy" [(ngModel)]="inputRegister.birthday">
     </div>
     <p class="note-footer">
         This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.

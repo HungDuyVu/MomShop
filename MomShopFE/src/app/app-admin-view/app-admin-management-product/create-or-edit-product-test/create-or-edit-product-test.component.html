@@ -1,7 +1,7 @@
 <p-toast></p-toast>
 <p-confirmDialog [style]="{width: 'auto', 'min-width': '300px'}" header="Thông báo" [baseZIndex]="10000"></p-confirmDialog>
 <div class="container1">
-    <div class="user">
+    <div class="user" style="overflow: scroll; height: 100%;">
         <div class="mb-2">
             <button (click)="backToProductList()" pButton pRipple type="button" icon="pi pi-angle-left"
                 class="p-button-rounded p-button-text" label="Quay lại"></button>
@@ -79,7 +79,7 @@
                         <hr class="hr-line">
                         <div class="row">
                             <div class="col-10"></div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 <button pButton pRipple label="Thêm" icon="pi pi-plus" class="p-button-success mr-2"
                                     (click)="addvalue()">
                                 </button>

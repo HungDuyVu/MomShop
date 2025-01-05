@@ -25,21 +25,22 @@ export class AppUserViewResponseComponent {
     }
 
   backtoHome(){
-    this.route.queryParams.subscribe(params => {
-      this.statusCode = params['vnp_ResponseCode']; // 'query' ở đây tương ứng với tên query parameter bạn muốn lấy giá trị
-      if (this.statusCode == "00"){
-        this.orderId = params['vnp_TxnRef'];
-        this.data.statusCode = this.statusCode;
-        this.data.orderId = this.orderId;
+    this.router.navigateByUrl('/view');
+    // this.route.queryParams.subscribe(params => {
+    //   this.statusCode = params['vnp_ResponseCode']; // 'query' ở đây tương ứng với tên query parameter bạn muốn lấy giá trị
+    //   if (this.statusCode == "00"){
+    //     this.orderId = params['vnp_TxnRef'];
+    //     this.data.statusCode = this.statusCode;
+    //     this.data.orderId = this.orderId;
 
-        this.userOrderService.receiveNofity(this.data).subscribe((data) => {
-          this.router.navigateByUrl('/view');
-        });
-        this.isPayment = true;
+    //     this.userOrderService.receiveNofity(this.data).subscribe((data) => {
+    //       this.router.navigateByUrl('/view');
+    //     });
+    //     this.isPayment = true;
         
-      } else {
-        this.isPayment = false;
-      }
-    });
+    //   } else {
+    //     this.isPayment = false;
+    //   }
+    // });
   }
 }

@@ -5,22 +5,18 @@
   <div class="content">
     <p class="title"> <i class="pi pi-bars" style="color: slateblue; margin-right: 8px; font-size: 1rem"></i>Menu</p>
     <ul class="item-menu d-flex">
-      <li class="item" (click)="ClickMenu(0)" routerLink="dashboard" routerLinkActive="active"><i class="pi pi-book"
-          style="color: slateblue; margin-right: 8px;"></i>Dashboard</li>
-      <li class="item" (click)="ClickMenu(1)" routerLink="customer" routerLinkActive="active"><i class="pi pi-check"
-          style="color: slateblue; margin-right: 4px;"></i> Quản lý khách hàng</li>
-      <li class="item" (click)="ClickMenu(2)" routerLink="product-management/product" routerLinkActive="active"><i
-          class="pi pi-tags" style="color: slateblue; margin-right: 8px;"></i> Quản lý sản phẩm</li>
-      <li class="item" (click)="ClickMenu(3)" routerLink="order-management/order" routerLinkActive="active"><i
-          class="pi pi-box" style="color: slateblue; margin-right: 8px;"></i> Quản lý đơn hàng</li>
-      <li class="item" (click)="ClickMenu(4)" routerLink="received-order/order" routerLinkActive="active"><i
-          class="pi pi-inbox" style="color: slateblue; margin-right: 8px;"></i> Quản lý nhập hàng</li>
-      <li class="item" (click)="ClickMenu(5)" routerLink="feedback" routerLinkActive="active"><i class="pi pi-star"
-          style="color: slateblue; margin-right: 8px;"></i> Quản lý phản hồi người dùng</li>
-      <li class="item" (click)="ClickMenu(6)" routerLink="collection-management/collection" routerLinkActive="active"><i
-          class="pi pi-book" style="color: slateblue; margin-right: 8px;"></i> Quản lý bộ sưu tập</li>
-      <li class="item" (click)="logout()"><i class="pi pi-sign-out" style="color: slateblue; margin-right: 8px;"></i>
-        Đăng xuất</li>
+      <li class="item" (click)="ClickMenu(0)" routerLink="dashboards" routerLinkActive="active"><i class="pi pi-book" style="color: slateblue; margin-right: 8px;"></i>Dashboard</li>
+      <li class="item" (click)="ClickMenu(1)" routerLink="customer" routerLinkActive="active"><i class="pi pi-check" style="color: slateblue; margin-right: 4px;"></i> Quản lý khách hàng</li>
+      <li class="item" (click)="ClickMenu(2)" routerLink="product-management/product" routerLinkActive="active"><i class="pi pi-tags" style="color: slateblue; margin-right: 8px;"></i> Quản lý sản phẩm</li>
+      <li class="item" (click)="ClickMenu(3)" routerLink="order-management/order" routerLinkActive="active"><i class="pi pi-box" style="color: slateblue; margin-right: 8px;"></i> Quản lý đơn hàng</li>
+      <li class="item" (click)="ClickMenu(4)" routerLink="received-order/order" routerLinkActive="active"><i class="pi pi-inbox" style="color: slateblue; margin-right: 8px;"></i> Quản lý nhập hàng</li>
+      <li class="item" (click)="ClickMenu(5)" routerLink="feedback" routerLinkActive="active"><i class="pi pi-star" style="color: slateblue; margin-right: 8px;"></i> Quản lý phản hồi người dùng</li>
+      <li class="item" (click)="ClickMenu(6)" routerLink="collection-management/collection" routerLinkActive="active"><i class="pi pi-book" style="color: slateblue; margin-right: 8px;"></i> Quản lý bộ sưu tập</li>
+      <li class="item" (click)="logout()"><i class="pi pi-sign-out" style="color: slateblue; margin-right: 8px;"></i> Đăng xuất</li>
     </ul>
   </div>
 </div>
+<main class="admin-content">
+  <!-- Nội dung của các route con sẽ hiển thị tại đây -->
+  <router-outlet></router-outlet>
+</main>

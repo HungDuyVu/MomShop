@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserCartService } from 'src/services/cartService.service';
 import { ProductService } from 'src/services/product.service';
+import { ProductDetailDto } from 'src/models/productDetail';
 
 @Component({
   selector: 'app-user-collection-detail',
@@ -29,6 +30,8 @@ export class UserCollectionDetailComponent {
       private router: Router,
       private productService: ProductService,
       private cartService: UserCartService,
+      private productDetailDto: ProductDetailDto,
+
       public toastr: ToastrService
         ) {}
     
@@ -57,26 +60,35 @@ export class UserCollectionDetailComponent {
     );
     }
     else {
-      this.value = this.value == ''? 'S' : this.value;
-      this.cartService.addToCart(this.product.id,user.id, this.value).subscribe((res) => {
-        if(res == 'error')
-        {
-          this.toastr.warning(
-            "Giỏ hàng đã có sản phẩm",
-            "Thông báo",
-            { timeOut: 3000 }
-            );
-        }
-        else if(res == 'success')
-        {
-          this.toastr.success(
-            "Đã thêm vào giỏ hàng",
-            "Thông báo",
-            { timeOut: 3000 }
-            );
-           // this.router.navigateByUrl('/cart');
-        }
-        });
+      // this.value = this.value == ''? 'S' : this.value;
+      if(this.value == ""){
+        this.toastr.error(
+          "Vui lòng chọn size",
+          "Thông báo",
+          { timeOut: 3000 }
+          );
+      }else{
+        this.cartService.addToCart(this.product.id,user.id, this.value).subscribe((res) => {
+          if(res == 'error')
+          {
+            this.toastr.warning(
+              "Giỏ hàng đã có sản phẩm",
+              "Thông báo",
+              { timeOut: 3000 }
+              );
+          }
+          else if(res == 'success')
+          {
+            this.toastr.success(
+              "Đã thêm vào giỏ hàng",
+              "Thông báo",
+              { timeOut: 3000 }
+              );
+             // this.router.navigateByUrl('/cart');
+          }
+          });
+      }
+     
       }
   }
 

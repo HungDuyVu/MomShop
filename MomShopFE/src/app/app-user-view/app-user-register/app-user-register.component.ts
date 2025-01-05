@@ -11,9 +11,12 @@ import { UserService } from 'src/services/user.service';
   styleUrls: ['./app-user-register.component.scss']
 })
 export class AppUserRegisterComponent {
+  maxDate: string;
   inputRegister: RegisterDto = new RegisterDto
   constructor(private _user: UserService,private http: HttpClient,
     public toastr: ToastrService, private router: Router) {
+      const now = new Date();
+      this.maxDate = now.toISOString().slice(0, 16);
   }
   register() {
     if (this.inputRegister.email) {

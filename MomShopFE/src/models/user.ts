@@ -11,5 +11,6 @@ export class UserDto {
   district: string;
   nation: string;
   createdBy: string;
-  userType : number
+  userType : number;
+  status: number;
 }

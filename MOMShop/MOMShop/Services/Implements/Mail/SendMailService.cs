@@ -13,6 +13,7 @@ public class SendMailService : ISendMailService
 
     private readonly ILogger<SendMailService> logger;
 
+    public SendMailService() { }
 
     // mailSetting được Inject qua dịch vụ hệ thống
     // Có inject Logger để xuất log
@@ -22,6 +23,7 @@ public class SendMailService : ISendMailService
         logger = _logger;
         logger.LogInformation("Create SendMailService");
     }
+
 
     // Gửi email, theo nội dung trong mailContent
     public async Task SendMail(MailContent mailContent)

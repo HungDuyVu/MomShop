@@ -96,7 +96,7 @@
                                 Thông tin chi tiết
                             </h5>
                         </div>
-                        <div class="col-1">
+                        <div class="col-2">
                             <button pButton pRipple label="Thêm" icon="pi pi-plus" class="p-button-success mr-2" style="height: 40px;"
                                 (click)="addvalue()">
                             </button>
@@ -141,10 +141,11 @@
                                         pInputText />
                                 </div>
                             </div>
-                            <div class="col-1">
+                            <div class="col-2">
                                 <div class="field mb-2">
                                     <label htmlFor="quantity">
-                                        Số lượng <span class="required-field"> * </span>
+                                        Số lượng 
+                                        <span class="required-field"> * </span>
                                     </label>
                                     <input [(ngModel)]="receivedOrderDetail.quantity" type="number" id="quantity"
                                         name="quantity" pInputText />

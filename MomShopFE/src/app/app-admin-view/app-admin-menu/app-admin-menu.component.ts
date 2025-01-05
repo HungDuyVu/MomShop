@@ -12,8 +12,8 @@ export class AppAdminMenuComponent implements OnInit {
   @Input() isExpanded: boolean = false;
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private route: Router, private menuService: MenuService, public toastr: ToastrService, private router: Router) {
-    if (sessionStorage.getItem('userType')) {
+  constructor(private route:Router, private menuService:MenuService,public toastr: ToastrService,private router: Router){
+    if (sessionStorage.getItem('userType')){
       location.reload();
       sessionStorage.clear();
     }
@@ -23,35 +23,35 @@ export class AppAdminMenuComponent implements OnInit {
   }
 
   handleSidebarToggle = () => this.toggleSidebar.emit(!this.isExpanded);
-  ClickMenu(option) {
+  ClickMenu(option){
     this.menuService.setShowMenu(!this.menuService.showMenu$);
     var menuItem = document.querySelectorAll(".item");
     var menuActive = document.getElementsByClassName("active")[0];
     menuActive?.classList.remove("active");
-    menuItem?.forEach((item) => {
-      item?.addEventListener("click", function () {
-        item.classList.add("active");
-      })
+    menuItem?.forEach((item)=>{
+       item?.addEventListener("click",function(){
+         item.classList.add("active");
+       })
     })
-    if (option == 0) {
+    if(option == 0){
       this.route.navigateByUrl("admin/dashboard");
     }
-    if (option == 1) {
+    if(option == 1){
       this.route.navigateByUrl("admin/customer");
     }
-    if (option == 2) {
+    if(option == 2){
       this.route.navigateByUrl("admin/product-management/product");
     }
-    if (option == 3) {
+    if(option == 3){
       this.route.navigateByUrl("admin/order-management/order");
     }
-    if (option == 4) {
-      this.route.navigateByUrl("admin/received-order/order");
+    if(option == 4){
+      this.route.navigateByUrl("admin/received-order/orders");
     }
-    if (option == 5) {
+    if(option == 5){
       this.route.navigateByUrl("admin/feedback");
     }
-    if (option == 6) {
+    if(option == 6){
       this.route.navigateByUrl("admin/collection-management/collection");
     }
   }

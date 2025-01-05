@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿    using System.ComponentModel;
 
-namespace MOMShop.Dto.Users
-{
-    public class LoginDto
+    namespace MOMShop.Dto.Users
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public class ChangePasswordUserDto
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
+            public string NewPassword { get; set; }
+        }
     }
-}

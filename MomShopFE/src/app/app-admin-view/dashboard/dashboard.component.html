@@ -1,4 +1,4 @@
-<div class="user">
+<div class="user" style="overflow: scroll; height: 100%;">
     <div class="card" style="margin: 0 40px; height: 85%;">
         <div style="margin: 20px; overflow-y:scroll; ">
             <h4 class="mt-4">Dashboard</h4>
@@ -41,7 +41,7 @@
                 <div class="row col-10">
                     <p-calendar class="col-2" [(ngModel)]="timeSearch" view="month" dateFormat="mm/yy" [readonlyInput]="true"></p-calendar>
                     <p-button class="col-1" icon="pi pi-search" (click)="getChartMonth()"></p-button>
-                    <p-button class="col-2" icon="pi pi-file-excel" (click)="getChartMonth()" label="Xuất báo cáo"></p-button>
+                    <p-button class="col-2" style="width: 300px;" icon="pi pi-file-excel" (click)="getChartMonth()" label="Xuất báo cáo"></p-button>
                 </div>
             </div>
             <hr class="hr-line">

@@ -41,6 +41,7 @@ import { AppUserOrderDeliveryComponent } from './app-user-view/app-user-order/ap
 import { AppAdminManagementOrderComponent } from './app-admin-view/app-admin-management-order/app-admin-management-order.component';
 import { DashboardComponent } from './app-admin-view/dashboard/dashboard.component';
 import { AppUserViewResponseComponent } from './app-user-view/app-user-view-response/app-user-view-response.component';
+import { ProductDetailDto } from 'src/models/productDetail';
 
 @NgModule({
   declarations: [
@@ -81,15 +82,15 @@ import { AppUserViewResponseComponent } from './app-user-view/app-user-view-resp
     FormsModule,
     CalendarModule,
     ToastrModule,
-		MenuModule,
+    MenuModule,
     FileUploadModule,
     DynamicDialogModule,
     ToastrModule.forRoot({
-      positionClass :'toast-top-right',
+      positionClass: 'toast-top-right',
     }),
   ],
   providers: [
-    ToastrService,
+    ToastrService, ProductDetailDto,
   ],
   bootstrap: [AppComponent]
 })
