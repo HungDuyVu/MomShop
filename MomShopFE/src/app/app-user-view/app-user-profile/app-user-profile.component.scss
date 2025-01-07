@@ -2,7 +2,7 @@
     max-width: 900px;
     margin: 0 auto;
     background-color: #ffffff;
-    padding: 30px 40px
+    padding: 30px 40px;
 }
 
 .profile {
@@ -23,93 +23,33 @@
     margin-bottom: 20px;
 }
 
-.input:active {
-    border: 1px solid #dedede;
-}
-
-.information {
-    padding-left: 25px;
-    margin-top: 40px;
+.button-group {
     display: flex;
-    flex-direction: column;
-}
-
-.save-info {
+    gap: 20px;
+    /* Khoảng cách giữa các nút */
     margin-top: 20px;
-    color: #fff;
-    background-color: #ee4d2d;
-    padding: 6px 0;
-    border: none;
-    border-radius: 5px;
-    width: 10%;
-    float: right;
+    /* Tạo khoảng cách trên */
 }
 
-.p-element {
-    width: 70%;
-    height: 35px;
-}
 
-.change-password {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #dedede;
-}
-
-.change-password h5 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.change-password .input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #dedede;
-}
-
+.save-info,
 .change-password .save-info,
 .change-password .cancel-info {
-    margin-top: 10px;
     padding: 10px 20px;
     border-radius: 5px;
-    width: 48%;
-    margin-right: 4%;
+    color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
-.change-password .save-info {
-    background-color: #28a745;
-    color: white;
+.save-info {
+    background-color: #ee4d2d;
 }
 
-.change-password .save-info:hover {
-    background-color: #218838;
+.change-password .save-info {
+    background-color: #28a745;
 }
 
 .change-password .cancel-info {
     background-color: #dc3545;
-    color: white;
-}
-
-.change-password .cancel-info:hover {
-    background-color: #c82333;
-}
-
-.d-flex {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.d-flex .input {
-    margin-bottom: 20px;
-}
-
-.d-flex .color-text {
-    margin-right: 10px;
 }

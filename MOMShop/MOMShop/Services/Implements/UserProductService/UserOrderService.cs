@@ -69,7 +69,8 @@ namespace MOMShop.Services.Implements.UserProductService
                 {
                     orderCode = RandomNumberGenerator.GenerateRandomNumber(8);
                     break;
-                } else
+                }
+                else
                 {
                     break;
                 }
@@ -94,7 +95,7 @@ namespace MOMShop.Services.Implements.UserProductService
                         if (productDetail.Quantity <= 0)
                         {
                             return new APIResponse("hethang");
-                           
+
                         }
                         productDetail.Quantity = productDetail.Quantity - item.Quantity;
                         var productDetails = _dbContext.ProductDetails.Where(p => p.ProductId == item.ProductId);
@@ -102,7 +103,7 @@ namespace MOMShop.Services.Implements.UserProductService
                         {
                             product.Status = Status.HET_HANG;
                         }
-                        if(productDetails.All(e => e.Quantity == 0))
+                        if (productDetails.All(e => e.Quantity == 0))
                         {
                             product.Status = Status.HET_HANG;
                         }
@@ -130,14 +131,14 @@ namespace MOMShop.Services.Implements.UserProductService
                 _dbContext.HistoryUpdates.Add(history);
                 _dbContext.SaveChanges();
                 transaction.Commit();
-                
+
             }
             catch (Exception ex)
             {
                 transaction.Rollback();
             }
 
-           
+
             //Cấu hình thông tin SMTP
             //try
             //{
@@ -192,7 +193,7 @@ namespace MOMShop.Services.Implements.UserProductService
         public List<ViewOrderDto> FindAll(FilterOrderDto input)
         {
             var orders = _dbContext.Orders.Where(e => e.CreatedBy == input.CustomerId && !e.Deleted && !e.UserDelete
-                                                    && (input.Status == null || e.OrderStatus == input.Status) 
+                                                    && (input.Status == null || e.OrderStatus == input.Status)
                                                     && (input.OrderCode == null || e.OrderCode.Contains(input.OrderCode))).OrderByDescending(e => e.Id).ToList();
             var result = _mapper.Map<List<ViewOrderDto>>(orders);
             foreach (var item in result)
@@ -248,6 +249,23 @@ namespace MOMShop.Services.Implements.UserProductService
                     $"\r\n  <a href=\"http://localhost:4200/view\">Đến cửa hàng của chúng tôi</a>\r\n    </p>"
                 };
                 _mail.SendMail(content);
+
+                // Lấy danh sách chi tiết đơn hàng
+                var orderDetails = _dbContext.OrderDetails.Where(od => od.OrderId == order.Id).ToList();
+
+                foreach (var detail in orderDetails)
+                {
+                    // Tìm sản phẩm chi tiết trong ProductDetail
+                    var productDetail = _dbContext.ProductDetails
+                        .FirstOrDefault(pd => pd.ProductId == detail.ProductId && pd.Size == detail.Size);
+
+                    if (productDetail != null)
+                    {
+                        // Cập nhật lại số lượng
+                        productDetail.Quantity += detail.Quantity;
+                    }
+                }
+                _dbContext.SaveChanges();
             }
             var history = new HistoryUpdate()
             {

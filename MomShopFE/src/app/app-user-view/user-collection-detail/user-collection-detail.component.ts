@@ -13,12 +13,13 @@ import { ProductDetailDto } from 'src/models/productDetail';
 export class UserCollectionDetailComponent {
   baseUrl = 'http://localhost:5001';
   visible = false;
+  selectedSize: string;
 
   product:any;
   value: string = '';
     
     productSize: any[] = [
-        { size: 'XS', value: 'XS' },
+        { size: 'XS', value: 'XS'},
         { size: 'S', value: 'S' },
         { size: 'M', value: 'M' },
         { size: 'L', value: 'L' },
@@ -35,13 +36,14 @@ export class UserCollectionDetailComponent {
       public toastr: ToastrService
         ) {}
     
-    ngOnInit() {
-      const id = this.route.snapshot.queryParamMap.get('id');
-      this.productService.getforEditProduct(id).subscribe((res) => {
-        this.product = res;
-      })
-    }
-
+        ngOnInit() {
+          const id = this.route.snapshot.queryParamMap.get('id');
+          this.productService.getforEditProduct(id).subscribe((res) => {
+            this.product = res;
+            console.log(this.product); // Kiểm tra dữ liệu nhận được.
+          });
+        }
+        
   // plusQuantity(param){
   //   param.quantity++;
   // }

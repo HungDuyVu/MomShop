@@ -65,7 +65,7 @@ export class AppUserProfileComponent {
   toggleChangePasswordForm() {
     this.showChangePasswordForm = !this.showChangePasswordForm;
     if (this.showChangePasswordForm) {
-      this.changePasswordDto.password = '******';
+      this.changePasswordDto.password = '****';
       this.changePasswordDto.newPassword = '';
     }
   }

@@ -11,7 +11,7 @@ import { ProductDetailDto } from 'src/models/productDetail';
 import { ImageService } from 'src/services/image.Service';
 import { ProductConst } from 'src/shared/AppConst';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { ImageService } from 'src/services/image.Service';
+import { ChangeDetectorRef } from '@angular/core';
 
 class ImageSnippet {
   pending: boolean = false;
@@ -53,6 +53,7 @@ export class CreateOrEditProductTestComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private router: Router,
     private route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
   ) { }
   ngOnInit(): void {
     //console.log("ầv", this.configDialog?.data.product);
@@ -88,7 +89,7 @@ export class CreateOrEditProductTestComponent implements OnInit {
       if (this.productDetails.length > 0) {
         this.productDetails.forEach(element => {
           console.log("ele", element);
-          if(element.size == undefined || element.quantity == undefined){
+          if (element.size == undefined || element.quantity == undefined) {
             check = true;
           }
         });
@@ -132,13 +133,26 @@ export class CreateOrEditProductTestComponent implements OnInit {
   processFile(imageInput: any) {
     const file: File = imageInput.files[0];
     const reader = new FileReader();
-
+  
     reader.addEventListener('load', (event: any) => {
-      this.selectedFile = new ImageSnippet(event.target.result, file);
-      console.log("src", this.selectedFile.file);
+      // Nếu có ảnh đã chọn trước đó, sẽ cập nhật ảnh mới
+      if (this.selectedFile) {
+        this.selectedFile.src = event.target.result; // Cập nhật lại src của ảnh
+        this.selectedFile.file = file; // Cập nhật lại file ảnh
+      } else {
+        // Nếu chưa có ảnh cũ, tạo mới ImageSnippet
+        this.selectedFile = new ImageSnippet(event.target.result, file);
+      }
+  
+      console.log("src", this.selectedFile.src); // Kiểm tra ảnh mới
     });
+    
     reader.readAsDataURL(file);
   }
+  
+
+
+
   uploadedFiles: any[] = [];
 
   onUpload(event: any) {
@@ -161,15 +175,15 @@ export class CreateOrEditProductTestComponent implements OnInit {
     }
   }
   addDetail() {
-    
+
   }
 
   editDetail(productDetail) {
-    
+
   }
 
   deleteDetail(row) {
-    
+
   }
   save() {
     let check = false;
@@ -179,17 +193,25 @@ export class CreateOrEditProductTestComponent implements OnInit {
         check = true;
       }
     });
+  
+    // Cập nhật imageUrl trước khi gửi lên backend
+    if (this.selectedFile) {
+      this.product.imageUrl = this.selectedFile.src; // Cập nhật imageUrl cho product
+    }
+  
     this.product.productDetails = this.productDetails;
+    
     if (this.validate() && !check) {
       this.productServices.createOrEdit(this.product).subscribe((data: any) => {
-        if (data.message === "duplicate"){
+        if (data.message === "duplicate") {
           this.messageService.add({ severity: 'error', summary: 'Thông báo', detail: "Mã sản phẩm đã tồn tại", life: 3000 });
         } else {
           if (this.selectedFile) {
             const formData = new FormData();
             formData.append('input', this.selectedFile.file);
-            formData.append('productId', data.data.id);
-            this.imageService.uploadImage(formData, data.data.id).subscribe(
+            formData.append('productId', data.id);
+  
+            this.imageService.uploadImage(formData, data.id).subscribe(
               (res) => {
                 this.onSuccess();
               },
@@ -197,7 +219,8 @@ export class CreateOrEditProductTestComponent implements OnInit {
                 this.onError();
               })
           }
-          if (this.isNew){
+  
+          if (this.isNew) {
             this.messageService.add({ severity: 'success', summary: 'Thông báo', detail: 'Thêm thành công', life: 3000 });
           } else {
             this.messageService.add({ severity: 'success', summary: 'Thông báo', detail: 'Cập nhật thành công', life: 3000 });
@@ -208,6 +231,11 @@ export class CreateOrEditProductTestComponent implements OnInit {
       this.messageService.add({ severity: 'error', summary: 'Thông báo', detail: 'Vui lòng nhập đầy đủ thông tin', life: 3000 });
     }
   }
+  
+
+
+
+
 
   close() {
   }

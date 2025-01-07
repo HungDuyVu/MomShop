@@ -32,6 +32,46 @@ namespace MOMShop.Services.Implements
             float total = 0;
             foreach (var item in input.Details)
             {
+                // Kiểm tra sản phẩm có tồn tại trong bảng Product không
+                var product = _dbContext.Products.FirstOrDefault(p => p.Code == item.Code && !p.Deleted);
+                if (product == null)
+                {
+                    // Nếu sản phẩm không tồn tại, thêm mới sản phẩm
+                    product = new Product
+                    {
+                        Code = item.Code,
+                        Name = item.Name,
+                        ProductType = item.Type,
+                        Price = item.UnitPrice,
+                        Description = "New product added automatically", // Mô tả mặc định
+                        Status = 2, // Trạng thái sản phẩm mới là 2
+                        Deleted = false
+                    };
+                    _dbContext.Products.Add(product);
+                    _dbContext.SaveChanges(); // Lưu để lấy Id của sản phẩm
+                }
+
+                // Kiểm tra chi tiết sản phẩm trong bảng ProductDetail
+                var productDetail = _dbContext.ProductDetails.FirstOrDefault(pd => pd.ProductId == product.Id && pd.Size == item.Size);
+
+                if (productDetail != null)
+                {
+                    // Nếu ProductDetail tồn tại, cộng thêm số lượng
+                    productDetail.Quantity += item.Quantity;
+                    productDetail.Description = item.Description; // Cập nhật mô tả nếu cần
+                }
+                else
+                {
+                    // Nếu ProductDetail không tồn tại, tạo mới
+                    _dbContext.ProductDetails.Add(new ProductDetail
+                    {
+                        ProductId = product.Id,
+                        Size = item.Size,
+                        Quantity = item.Quantity,
+                        Description = item.Description
+                    });
+                }
+
                 total += item.Quantity * item.UnitPrice;
 
             }
@@ -110,7 +150,7 @@ namespace MOMShop.Services.Implements
         public List<ReceiveOrderDto> GetReceiveOrders(FilterReceiveOrderDto input)
         {
             var resultItem = new List<ReceiveOrderDto>();
-            var receiveOrders = _dbContext.ReceiveOrders.Where(e => !e.Deleted && (input.Status == null || e.Status == input.Status) && (input.Keyword == null 
+            var receiveOrders = _dbContext.ReceiveOrders.Where(e => !e.Deleted && (input.Status == null || e.Status == input.Status) && (input.Keyword == null
             || e.Code.Contains(input.Keyword)
             || e.Supplier.Contains(input.Keyword)
             || e.Receiver.Contains(input.Keyword)

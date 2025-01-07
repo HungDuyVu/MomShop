@@ -172,8 +172,8 @@ export class CreatOrEditImportProductComponent implements OnInit {
     });
   }
 
-  backToCollectionList(){
-    this.router.navigate(['admin/received-order/order']);
+  backToReceivedOrder(){
+    this.router.navigate(['admin/received-order/orders']);
   }
   addvalue() {
     let check = false;

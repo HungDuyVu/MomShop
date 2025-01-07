@@ -84,10 +84,10 @@
                     <img src="{{baseUrl}}/{{ product.imageUrl}}" class="image-product" alt="" width="100" height="100">
                     <span class="product-thumbnail-quantity" aria-hidden="true">{{product.quantity}}</span>
                 </div>
-                <div class="col-6 description align-items-center d-flex">
+                <div class="col-6 description align-items-center d-flex gap-3">
                     <span class="name-product">{{product.productName | uppercase}}</span>
                     <br>
-                    <span class="size">{{product.size}}</span>
+                    <span class="size ml-1"> {{ product.size}}</span>
                 </div>
                 <div class="col-3 price-product align-items-center d-flex align-items-end">
                     <p >{{product.quantity*product.price | currency:"VND":"symbol"}}</p>

@@ -35,18 +35,22 @@
             <div style="display:flex;align-items: center;">
                 <h2 class="text-uppercase font-weight-bold" style="font-weight: bold;display:block;margin-bottom: 0;">SIZE:</h2>
                 <div style="margin-left: 20px;">
-                        <div class="flex flex-wrap gap-3"  style="display:flex">
-                            <div class="d-flex align-items-center" style="display:flex" *ngFor="let item of productSize">
-                                <div>
-                                    <p-radioButton name="size" value="{{item.size}}" [(ngModel)]="value" ></p-radioButton>
-                                </div>
-                                <div>
-                                    <label style="margin-left: 5px; font-size: 24px">{{item.size}}</label>
-                                </div>
+                    <div class="flex flex-wrap gap-3" style="display:flex">
+                        <div class="d-flex align-items-center" style="display:flex" *ngFor="let item of product.productDetails">
+                            <div>
+                                <!-- <p-radioButton name="size" [value]="item.size" [(ngModel)]="selectedSize"></p-radioButton> -->
+                                <p-radioButton name="size" [value]="item.size" [(ngModel)]="value"></p-radioButton>
+                            </div>
+                            <div>
+                                <label style="margin-left: 5px; font-size: 24px">
+                                    {{item.size}} ({{item.quantity}})
+                                </label>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
+            
             <div>
                 <div class="mt-3">
                     <div style="margin-bottom: 15px;" class="mt-1">

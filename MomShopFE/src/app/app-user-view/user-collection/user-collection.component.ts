@@ -50,7 +50,7 @@ export class UserCollectionComponent {
   }
 
   showDetail(param) {
-    console.log("collection detail", param.id);
+    console.log("collection detail", param);
     console.log("this.router", this.router);
 
 

@@ -1,13 +1,14 @@
 <p-toast></p-toast>
-<p-confirmDialog [style]="{width: 'auto', 'min-width': '300px'}" header="Thông báo" [baseZIndex]="10000"></p-confirmDialog>
+<p-confirmDialog [style]="{width: 'auto', 'min-width': '300px'}" header="Thông báo"
+    [baseZIndex]="10000"></p-confirmDialog>
 <div class="container1">
     <div class="user" style="overflow: scroll; height: 100%;">
         <div class="mb-2">
             <button (click)="backToProductList()" pButton pRipple type="button" icon="pi pi-angle-left"
                 class="p-button-rounded p-button-text" label="Quay lại"></button>
         </div>
-        <div class="card p-fluid" style="margin: 0 40px; height: 78%">
-            <div class="row" style="margin: 20px">
+        <div class="card p-fluid" style="margin: 0 40px; height: 80%; overflow: hidden; padding-bottom: 10px;">
+            <div class="row" style="margin: 20px; padding-bottom: 10px">
                 <div class="row">
                     <div class="col-8">
                         <h5 *ngIf="!product.id" class="mb-2">Thêm mới sản phẩm</h5>
@@ -16,11 +17,12 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="field mb-">
-                                    <label class="mb-2" htmlFor="code">Mã sản phẩm<span class="required-field"> *
+                                    <label class="mb-2" htmlFor="code">Mã sản phẩm<span class="required-field" disabled>
+                                            *
                                         </span>
                                     </label>
                                     <input [(ngModel)]="product.code" type="text" id="code" name="code" pInputText
-                                        maxlength="256" />
+                                        maxlength="256" disabled />
                                 </div>
                             </div>
                             <div class="col-6">
@@ -49,7 +51,7 @@
                                             class="required-field"> * </span> </label>
                                     <p-dropdown appendTo="body" optionValue="code" name="productType" optionLabel="name"
                                         [(ngModel)]="product.productType" [options]="types" inputId="productType"
-                                        [style]="{'width':'100%'}">
+                                        [style]="{'width':'100%'}" [disabled]="true">
                                     </p-dropdown>
                                 </div>
                             </div>
@@ -80,49 +82,49 @@
                         <div class="row">
                             <div class="col-10"></div>
                             <div class="col-3">
-                                <button pButton pRipple label="Thêm" icon="pi pi-plus" class="p-button-success mr-2"
-                                    (click)="addvalue()">
-                                </button>
+                                <!-- <button pButton pRipple label="Thêm" icon="pi pi-plus" class="p-button-success mr-2"
+                                        (click)="addvalue()">
+                                    </button> -->
                             </div>
                         </div>
-                       <div style="height: 300px; overflow-y: scroll;">
-                        <ng-container *ngFor="let productDetail of productDetails; let i = index">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div class="field mb-2">
-                                        <label htmlFor="size">
-                                            Size <span class="required-field"> * </span>
-                                        </label>
-                                        <input [(ngModel)]="productDetail.size" type="text" id="size" name="size"
-                                            pInputText />
+                        <div style="height: 300px; overflow-y: scroll; padding-bottom: 14px">
+                            <ng-container *ngFor="let productDetail of productDetails; let i = index">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="field mb-2">
+                                            <label htmlFor="size">
+                                                Size <span class="required-field"> * </span>
+                                            </label>
+                                            <input [(ngModel)]="productDetail.size" type="text" id="size" name="size"
+                                                pInputText disabled />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="field mb-2">
-                                        <label htmlFor="quantity">
-                                            Số lượng <span class="required-field"> * </span>
-                                        </label>
-                                        <input [(ngModel)]="productDetail.quantity" type="number" id="quantity"
-                                            name="quantity" pInputText />
+                                    <div class="col-3">
+                                        <div class="field mb-2">
+                                            <label htmlFor="quantity">
+                                                Số lượng <span class="required-field"> * </span>
+                                            </label>
+                                            <input [(ngModel)]="productDetail.quantity" type="number" id="quantity"
+                                                name="quantity" pInputText disabled />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-5">
-                                    <div class="field mb-2">
-                                        <label htmlFor="description">
-                                            Mô tả
-                                        </label>
-                                        <input [(ngModel)]="productDetail.description" type="text" id="description"
-                                            name="description" pInputText />
+                                    <div class="col-5">
+                                        <div class="field mb-2">
+                                            <label htmlFor="description">
+                                                Mô tả
+                                            </label>
+                                            <input [(ngModel)]="productDetail.description" type="text" id="description"
+                                                name="description" pInputText disabled />
+                                        </div>
                                     </div>
+                                    <!-- <div class="col-1 mt-4">
+                                        <div style="height: 40px; width: 40px; margin-top: 8px">
+                                            <span><i class="pi pi-trash" style="color: slateblue; font-size: 2rem" (click)="removeDetail(i)"></i></span>
+                                        </div>
+                                    </div> -->
                                 </div>
-                                <div class="col-1 mt-4">
-                                    <div style="height: 40px; width: 40px; margin-top: 8px">
-                                        <span><i class="pi pi-trash" style="color: slateblue; font-size: 2rem" (click)="removeDetail(i)"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </ng-container>
-                       </div>
+                            </ng-container>
+                        </div>
                     </div>
                     <div class="col-4">
                         <h5 class="mb-2">Thêm ảnh</h5>
@@ -149,11 +151,12 @@
                 </div>
             </div>
             <!-- <div class="p-dialog-footer mt-4" style="width: 100%; position: fixed; left: 0; bottom: 0;">
-                <button pButton pRipple label="Hủy" icon="pi pi-times" class="p-button-text p-button-sm p-confirm-dialog-reject mt-4"
-                    (click)="close()"></button>
+                <button pButton pRipple label="Hủy" icon="pi pi-times"
+                    class="p-button-text p-button-sm p-confirm-dialog-reject mt-4" (click)="close()"></button>
                 <button pButton pRipple label="Lưu" icon="pi pi-check"
-                    class="p-button-text p-button-success p-button-sm p-confirm-dialog-approve mt-4"  (click)="save()"></button>
-                </div> -->
+                    class="p-button-text p-button-success p-button-sm p-confirm-dialog-approve mt-4"
+                    (click)="save()"></button>
+            </div> -->
         </div>
         <div class="mt-2">
             <button style="float: right; margin-right: 40px; height: 40px;" pButton pRipple label="Lưu"

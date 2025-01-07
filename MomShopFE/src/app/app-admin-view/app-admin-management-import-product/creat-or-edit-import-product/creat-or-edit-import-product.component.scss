@@ -1,3 +1,28 @@
 .required-field {
     color: red;
 }
+
+.product-detail {
+    font-size: 0.9rem; // Giảm kích thước font chữ
+    input,
+    textarea,
+    p-dropdown {
+        height: 30px; // Chiều cao nhỏ hơn
+        font-size: 0.85rem; // Kích thước chữ nhỏ hơn
+    }
+    label {
+        font-size: 0.85rem; // Kích thước chữ của label
+    }
+    .field {
+        margin-bottom: 8px; // Giảm khoảng cách giữa các field
+    }
+    .row {
+        margin-bottom: 10px; // Giảm khoảng cách giữa các dòng
+    }
+    .p-dropdown {
+        width: 100%;
+        .p-dropdown-label {
+            font-size: 0.85rem; // Kích thước chữ trong dropdown
+        }
+    }
+}

@@ -23,7 +23,7 @@ namespace MOMShop.Services.Implements
 
         public DiscountDto Add(DiscountDto input)
         {
-            var insert = _mapper.Map<Discount>(input);       
+            var insert = _mapper.Map<Discount>(input);
             _dbContext.Discounts.Add(insert);
             _dbContext.SaveChanges();
             return input;
@@ -44,6 +44,14 @@ namespace MOMShop.Services.Implements
             var check = _dbContext.Discounts.FirstOrDefault(d => d.DiscountCode == discountCode);
             if (check != null)
             {
+                check.Amount -= 1;
+                // Kiểm tra nếu Amount = 0 thì cập nhật Status
+                if (check.Amount == 0)
+                {
+                    check.Status = 0;
+                }
+                // Lưu các thay đổi vào cơ sở dữ liệu
+                _dbContext.SaveChanges();
                 return check.DiscountPercent;
             }
             return 0;
@@ -95,7 +103,7 @@ namespace MOMShop.Services.Implements
                 check.DiscountPercent = input.DiscountPercent;
                 check.Status = input.Status;
             }
-            return _mapper.Map<DiscountDto>(check);   
+            return _mapper.Map<DiscountDto>(check);
         }
     }
 }
